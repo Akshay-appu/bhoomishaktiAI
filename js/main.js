@@ -389,4 +389,46 @@
         showToast('This demo action is coming soon.', 'fa-leaf');
     });
 
+
+    // 10) Contact / rental-appointment forms (contact.html, x1.html "Book
+    //     BhoomiShakti X1" section). These forms post for real to FormSubmit
+    //     (see the HTML comment above each <form> for the one-time setup
+    //     step), so this script only handles the supporting UX around that:
+    //     showing/hiding the rental-specific fields, basic required-field
+    //     checks before the real submit happens, and a confirmation toast
+    //     after FormSubmit redirects back with ?sent=1.
+
+    // 10a) Reveal the rental-only fields (village, preferred date, duration)
+    //      only when any "Rent BhoomiShakti ..." reason is chosen (X1, S4,
+    //      or any future product added the same way).
+    $(document).on('change', '.bhoomi-reason-select', function () {
+        var $fields = $(this).closest('form').find('.rental-fields');
+        var isRental = /^Rent BhoomiShakti /.test($(this).val() || '');
+        $fields.toggleClass('d-none', !isRental);
+        $fields.find('input, select').prop('required', isRental);
+    });
+    // Run once on load in case a reason is pre-selected.
+    $('.bhoomi-reason-select').trigger('change');
+
+    // 10b) Friendly inline check before letting the browser submit for
+    //      real - required fields only; FormSubmit still validates too.
+    $('.bhoomi-appointment-form').on('submit', function (e) {
+        var $form = $(this);
+        var missing = false;
+        $form.find('[required]:visible').each(function () {
+            if (!$.trim($(this).val())) { missing = true; }
+        });
+        if (missing) {
+            e.preventDefault();
+            showToast('Please fill in the required fields before sending.', 'fa-exclamation-circle');
+        }
+        // Otherwise: let the form submit to FormSubmit as normal.
+    });
+
+    // 10c) After FormSubmit redirects back with ?sent=1, show a confirmation
+    //      toast instead of leaving the visitor guessing whether it worked.
+    if (/[?&]sent=1\b/.test(window.location.search)) {
+        showToast('Thanks! Your message has been sent - we will get back to you soon.', 'fa-seedling');
+    }
+
 })(jQuery);

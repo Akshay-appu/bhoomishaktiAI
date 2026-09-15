@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>BhoomiShakti JeevaDhara Krishi System — Controlled Bio-Nutrient Soil System</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+        <!-- SEO -->
+        <meta name="keywords" content="BhoomiShakti JeevaDhara, BSJD, bio nitrogen system, organic urea alternative, earthworm friendly farming, aged manure compost urine fertilizer, sustainable soil health India">
+        <meta name="description" content="BhoomiShakti JeevaDhara Krishi System (BSJD) is a controlled bio-nutrient soil system that replaces chemical urea with aged manure, compost and diluted urine, mixed into the field with the BhoomiShakti X1 machine.">
+        <meta name="author" content="BhoomiShakti JeevaDhara Team">
+        <meta name="robots" content="index, follow">
+        <meta property="og:title" content="BhoomiShakti JeevaDhara Krishi System — Controlled Bio-Nutrient Soil System">
+        <meta property="og:description" content="A controlled bio-nitrogen soil system, mechanically mixed into the field with BhoomiShakti X1.">
+        <meta property="og:type" content="website">
+
+        <!-- Name on Google, just above the link. -->
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "BhoomiShakti JeevaDhara Krishi System",
+  "description": "BhoomiShakti JeevaDhara Krishi System (BSJD) is a controlled bio-nutrient agricultural system combining aged manure, compost and diluted urine as a slow-release nitrogen source, mechanically mixed into soil using the BhoomiShakti X1 machine, to restore earthworm populations and soil health.",
+  "brand": { "@type": "Brand", "name": "BhoomiShakti" },
+  "category": "Agricultural Soil Treatment"
+}
+</script>
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- Page-specific styles for the JeevaDhara page (kept inline so this
+             file can be dropped in on its own, without editing css/style.css).
+             Reuses the site's existing --bhoomi-* / --bs-* variables. Note:
+             like S4, JeevaDhara has no real product photo (it's a soil
+             treatment system, not a single machine), so the hero below is an
+             original labelled diagram, not a photo. IMPORTANT: unlike an
+             earlier draft of the S4 page, .jd-hero-panel deliberately has NO
+             "overflow: hidden" - the discover-row cards below are meant to
+             hang partly below the panel's edge, and overflow:hidden would
+             clip their buttons off. Learned that the hard way on S4 - do not
+             add it back here. -->
+        <style>
+            /* ---- Hero diagram + overlapping "discover" cards ---- */
+            .jd-hero-panel {
+                position: relative;
+                margin-bottom: 90px;
+                min-height: 460px;
+                border-radius: 8px;
+                background: linear-gradient(135deg, var(--bhoomi-dark-green), var(--bhoomi-secondary-green));
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 50px 20px 160px;
+            }
+            .jd-hero-panel h6 {
+                color: var(--bhoomi-accent);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: .8rem;
+                margin-bottom: 34px;
+            }
+            .jd-hero-note {
+                color: rgba(255,255,255,0.6);
+                font-size: .8rem;
+                margin: 22px 0 0;
+                text-align: center;
+            }
+            .jd-hero-note i { margin-right: 6px; }
+            .jd-orbit {
+                position: relative;
+                width: 300px;
+                height: 300px;
+                flex-shrink: 0;
+            }
+            .jd-orbit-core {
+                position: absolute;
+                top: 50%; left: 50%;
+                transform: translate(-50%, -50%);
+                width: 108px; height: 108px;
+                border-radius: 50%;
+                background: var(--bhoomi-accent);
+                color: var(--bhoomi-dark-green);
+                display: flex; align-items: center; justify-content: center;
+                font-size: 2.4rem;
+                box-shadow: 0 0 0 10px rgba(255,255,255,0.08);
+                z-index: 2;
+            }
+            .jd-orbit-icon {
+                position: absolute;
+                width: 92px; height: 92px;
+                border-radius: 50%;
+                background: rgba(255,255,255,0.12);
+                border: 1px solid rgba(255,255,255,0.28);
+                color: #fff;
+                display: flex; flex-direction: column; align-items: center; justify-content: center;
+                text-align: center;
+                font-size: 1.15rem;
+                padding: 6px;
+                z-index: 1;
+            }
+            .jd-orbit-icon span {
+                display: block;
+                font-size: .6rem;
+                line-height: 1.15;
+                margin-top: 5px;
+                color: rgba(255,255,255,0.85);
+                font-weight: 500;
+            }
+            .jd-orbit-icon.oi-top { top: 0; left: 50%; transform: translate(-50%, 0); }
+            .jd-orbit-icon.oi-right { top: 50%; right: 0; transform: translate(0, -50%); }
+            .jd-orbit-icon.oi-bottom { bottom: 0; left: 50%; transform: translate(-50%, 0); }
+            .jd-orbit-icon.oi-left { top: 50%; left: 0; transform: translate(0, -50%); }
+            .discover-row {
+                position: absolute;
+                left: 0; right: 0;
+                bottom: -70px;
+                display: flex;
+                justify-content: center;
+                gap: 24px;
+                padding: 0 24px;
+                flex-wrap: wrap;
+            }
+            .discover-card {
+                width: 260px;
+                background: rgba(6, 69, 44, 0.88);
+                backdrop-filter: blur(6px);
+                border: 1px solid rgba(255,255,255,0.18);
+                border-radius: 10px;
+                padding: 26px 24px;
+                color: #fff;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+                transition: transform .35s ease, box-shadow .35s ease;
+            }
+            .discover-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 28px 50px rgba(0,0,0,0.32);
+            }
+            .discover-card h5 {
+                color: #fff;
+                margin-bottom: 10px;
+            }
+            .discover-card p {
+                color: rgba(255,255,255,0.75);
+                font-size: .9rem;
+                margin-bottom: 18px;
+            }
+            .discover-card a.btn {
+                font-size: .78rem;
+                letter-spacing: .5px;
+                padding: 8px 22px;
+            }
+            @media (max-width: 767px) {
+                .discover-row { position: static; margin-top: -40px; }
+                .jd-hero-panel { margin-bottom: 24px; padding-bottom: 50px; }
+                .jd-orbit { width: 260px; height: 260px; }
+                .jd-orbit-core { width: 92px; height: 92px; font-size: 2rem; }
+                .jd-orbit-icon { width: 78px; height: 78px; font-size: 1rem; }
+            }
+
+            /* ---- Working principle flow ---- */
+            .jd-flow {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: stretch;
+                gap: 0;
+            }
+            .jd-flow-node {
+                width: 170px;
+                background: var(--bs-dark);
+                border: 1px solid rgba(255,255,255,0.12);
+                border-radius: 8px;
+                padding: 26px 16px;
+                text-align: center;
+                margin: 8px;
+                transition: transform .3s ease, border-color .3s ease;
+            }
+            .jd-flow-node:hover {
+                transform: translateY(-6px);
+                border-color: var(--bhoomi-accent);
+            }
+            .jd-flow-node .jd-flow-icon {
+                width: 54px; height: 54px;
+                border-radius: 50%;
+                background: var(--bhoomi-accent);
+                color: var(--bhoomi-dark-green);
+                display: flex; align-items: center; justify-content: center;
+                font-size: 1.3rem;
+                margin: 0 auto 12px;
+            }
+            .jd-flow-node h6 { color: #fff; font-size: .85rem; margin-bottom: 0; }
+            .jd-flow-arrow {
+                display: flex; align-items: center; justify-content: center;
+                color: var(--bhoomi-accent);
+                font-size: 1.2rem;
+                width: 34px;
+                flex-shrink: 0;
+            }
+            @media (max-width: 900px) {
+                .jd-flow { flex-direction: column; align-items: center; }
+                .jd-flow-arrow { transform: rotate(90deg); }
+            }
+
+            /* ---- Applications list ---- */
+            .jd-app-item {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                background: var(--bs-dark);
+                border: 1px solid rgba(255,255,255,0.12);
+                border-radius: 8px;
+                padding: 20px 22px;
+                margin-bottom: 18px;
+                transition: transform .3s ease;
+            }
+            .jd-app-item:hover { transform: translateX(6px); }
+            .jd-app-item i {
+                width: 42px; height: 42px;
+                border-radius: 50%;
+                background: var(--bhoomi-accent);
+                color: var(--bhoomi-dark-green);
+                display: flex; align-items: center; justify-content: center;
+                flex-shrink: 0;
+            }
+            .jd-app-item span { color: #fff; font-size: .95rem; }
+
+            /* ---- Advantages accent band ---- */
+            .jd-advantage-band {
+                background: linear-gradient(120deg, var(--bhoomi-primary-green), var(--bhoomi-secondary-green));
+                border-radius: 10px;
+                padding: 46px 40px;
+                text-align: center;
+                color: #fff;
+            }
+            .jd-advantage-band p {
+                font-size: 1.15rem;
+                max-width: 780px;
+                margin: 0 auto;
+                color: #fff;
+            }
+
+            /* ---- Honest "good to know" limitations note ---- */
+            .jd-note-band {
+                border: 1px dashed rgba(255,255,255,0.3);
+                border-radius: 8px;
+                padding: 22px 26px;
+                color: rgba(255,255,255,0.75);
+                font-size: .92rem;
+                max-width: 900px;
+                margin: 36px auto 0;
+            }
+            .jd-note-band strong { color: #fff; }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- BhoomiShakti dynamic-software layer -->
+        <div id="bhoomi-progress-bar"></div>
+        <div id="bhoomi-toast-container" aria-live="polite"></div>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid header-top">
+            <div class="container d-flex align-items-center">
+                <div class="d-flex align-items-center h-100">
+                    <a href="index.html" class="navbar-brand" style="height: 125px;">
+                        <h1 class="text-primary mb-0"><i class="fas fa-leaf"></i> BhoomiShakti JDKS</h1>
+                    </a>
+                </div>
+                <div class="w-100 h-100">
+                    <div class="topbar px-0 py-2 d-none d-lg-block" style="height: 45px;">
+                        <div class="row gx-0 align-items-center">
+                            <div class="col-lg-8 text-center text-lg-center mb-lg-0">
+                                <div class="d-flex flex-wrap">
+                                    <div class="border-end border-primary pe-3">
+                                        <a href="#" class="text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i><span data-i18n="topbar.findLocation">Find A Location</span></a>
+                                    </div>
+                                    <div class="ps-3">
+                                        <a href="mailto:example@gmail.com" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>example@gmail.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 text-center text-lg-end">
+                                <div class="d-flex justify-content-end">
+                                    <div class="d-flex border-end border-primary pe-3">
+                                        <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a>
+                                        <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-instagram"></i></a>
+                                        <a class="btn p-0 text-primary me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                    <div class="dropdown ms-3 bhoomi-lang-switch">
+                                        <a href="#" class="dropdown-toggle text-white" data-bs-toggle="dropdown" aria-expanded="false"><small class="text-body"><i class="fas fa-globe-europe text-primary me-2"></i><span class="bhoomi-lang-label">English</span></small></a>
+                                        <div class="dropdown-menu dropdown-menu-end">
+                                            <a href="#" class="dropdown-item" data-lang="en">English</a>
+                                            <a href="#" class="dropdown-item" data-lang="hi">हिन्दी (Hindi)</a>
+                                            <a href="#" class="dropdown-item" data-lang="mr">मराठी (Marathi)</a>
+                                            <a href="#" class="dropdown-item" data-lang="kn">ಕನ್ನಡ (Kannada)</a>
+                                            <a href="#" class="dropdown-item" data-lang="ta">தமிழ் (Tamil)</a>
+                                            <a href="#" class="dropdown-item" data-lang="te">తెలుగు (Telugu)</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-bar px-0 py-lg-0" style="height: 80px;">
+                        <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-lg-end">
+                            <a href="index.html" class="navbar-brand-2">
+                                <h1 class="text-primary mb-0"><i class="fas fa-leaf"></i> BhoomiShakti JDK</h1>
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                                <span class="fa fa-bars"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarCollapse">
+                                <div class="navbar-nav mx-0 mx-lg-auto bg-white">
+                                    <a href="index.html" class="nav-item nav-link" data-i18n="nav.home">Home</a>
+                                    <a href="about.html" class="nav-item nav-link" data-i18n="nav.about">About</a>
+                                    <a href="service.html" class="nav-item nav-link" data-i18n="nav.service">Service</a>
+                                    <a href="index.html#projects" class="nav-item nav-link active" data-i18n="nav.projects">Projects</a>
+                                    <div class="nav-item dropdown">
+                                        <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                                            <span class="dropdown-toggle" data-i18n="nav.pages">Pages</span>
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a href="team.html" class="dropdown-item" data-i18n="nav.ourTeam">Our team</a>
+                                            <a href="testimonial.html" class="dropdown-item" data-i18n="testimonial.eyebrow">Testimonial</a>
+                                            <a href="404.html" class="dropdown-item" data-i18n="nav.404">404 Page</a>
+                                        </div>
+                                    </div>
+                                    <a href="contact.html" class="nav-item nav-link" data-i18n="nav.contact">Contact</a>
+                                    <div class="nav-item theme-toggle-wrap d-flex align-items-center">
+                                        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle light and dark mode" title="Toggle light / dark mode" data-i18n-title="theme.toggleTitle">
+                                            <i class="fas fa-sun"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+        <!-- Header / Breadcrumb Start -->
+        <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <p class="text-uppercase mb-2 wow fadeInDown" data-wow-delay="0.05s" style="color: var(--bhoomi-accent); letter-spacing: 2px; font-size: .85rem;">— Products</p>
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">BhoomiShakti JeevaDhara Krishi System</h4>
+                <p class="text-white-50 mb-4 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 700px; margin-left:auto; margin-right:auto;">
+                    Excessive dependence on chemical fertilizers, particularly urea, has led to soil degradation, reduced microbial diversity, and a decline in earthworm populations. BhoomiShakti JeevaDhara (BSJD) is a controlled bio-nutrient soil system — aged manure, compost and diluted urine, mechanically mixed into the field with BhoomiShakti X1 — built to restore soil life without giving up nutrient efficiency.
+                </p>
+                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.html#projects">Projects</a></li>
+                    <li class="breadcrumb-item active text-primary">BhoomiShakti JeevaDhara</li>
+                </ol>
+            </div>
+        </div>
+        <!-- Header / Breadcrumb End -->
+        <!-- Carousel Start -->
+        <div class="header-carousel owl-carousel overflow-hidden">
+            <div class="header-carousel-item hero-section">
+                <div class="hero-bg-half-1"></div>
+                <div class="hero-shape-1"></div>
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-lg-7 animated fadeInLeft">
+                                <div class="text-sm-center text-md-start">
+                                    <h4 class="text-white text-uppercase fw-bold mb-4">BhoomiShakti X1</h4>
+                                    <h1 class="display-2 text-white mb-4" data-i18n="hero.slide1Title">Battery-powered (Zero fuel consumption)</h1>
+                                    <p class="mb-5 fs-5" data-i18n="hero.slide1Desc">a compact, battery-powered agricultural ploughing machine designed to empower small and marginal farmers.
+                                    </p>
+                                    <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
+                                        <a class="btn btn-light py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i><span data-i18n="hero.watchVideo"> Watch Video</span></a>
+                                        <a class="btn btn-primary py-3 px-4 px-md-5 ms-2" href="#" data-i18n="hero.learnMore">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-carousel-item hero-section">
+                <div class="hero-bg-half-2"></div>
+                <div class="hero-shape-2"></div>
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-lg-7 animated fadeInLeft">
+                                <div class="text-sm-center text-md-start">
+                                    <h4 class="text-white text-uppercase fw-bold mb-4">BHOOMISHAKTI</h4>
+                                    <h1 class="display-2 text-white mb-4" data-i18n="hero.slide2Title">One Ecosystem. Multiple Innovations. Stronger Rural Communities.</h1>
+                                    <p class="mb-5 fs-5" data-i18n="hero.slide2Desc">BhoomiShakti integrates smart agricultural machines, sustainable farming research, AI, digital services, rural connectivity and renewable biomass solutions into one technology ecosystem.
+                                    </p>
+                                    <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
+                                        <a class="btn btn-light py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i><span data-i18n="hero.watchVideo"> Watch Video</span></a>
+                                        <a class="btn btn-primary py-3 px-4 px-md-5 ms-2" href="#" data-i18n="hero.learnMore">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel End -->
+
+        <!-- Hero Diagram + Discover Cards Start -->
+        <div class="container-fluid bg-dark pt-5 pb-5">
+            <div class="container">
+                <div class="jd-hero-panel wow fadeIn" data-wow-delay="0.1s">
+                    <h6>Concept Diagram — Bio-Nutrient Composition</h6>
+                    <div class="jd-orbit">
+                        <div class="jd-orbit-core"><i class="fas fa-flask"></i></div>
+                        <div class="jd-orbit-icon oi-top"><i class="fas fa-recycle"></i><span>Aged Manure (50%)</span></div>
+                        <div class="jd-orbit-icon oi-right"><i class="fas fa-leaf"></i><span>Compost (25%)</span></div>
+                        <div class="jd-orbit-icon oi-bottom"><i class="fas fa-layer-group"></i><span>Soil + Cocopeat (25%)</span></div>
+                        <div class="jd-orbit-icon oi-left"><i class="fas fa-tint"></i><span>Diluted Urine (1:8)</span></div>
+                    </div>
+                    <p class="jd-hero-note"><i class="fas fa-info-circle"></i>Concept illustration — not an actual product photo</p>
+                    <div class="discover-row">
+                        <div class="discover-card wow fadeInUp" data-wow-delay="0.2s">
+                            <h5><i class="fas fa-cogs text-primary me-2"></i>How It Works</h5>
+                            <p>From dry-mix and controlled nitrogen release to mixing into soil with BhoomiShakti X1.</p>
+                            <a href="#how-it-works" class="btn btn-primary">Discover</a>
+                        </div>
+                        <div class="discover-card wow fadeInUp" data-wow-delay="0.35s">
+                            <h5><i class="fas fa-list-check text-primary me-2"></i>Key Features</h5>
+                            <p>A controlled, earthworm-friendly alternative to chemical urea, mechanized for real farms.</p>
+                            <a href="#features" class="btn btn-primary">Discover</a>
+                        </div>
+                        <div class="discover-card wow fadeInUp" data-wow-delay="0.5s">
+                            <h5><i class="fas fa-calendar-check text-primary me-2"></i>Book JeevaDhara</h5>
+                            <p>Available for neighbouring farmers' fields. Book a date to get started.</p>
+                            <a href="#book-jd" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero Diagram + Discover Cards End -->
+
+
+        <!-- Objective Start -->
+        <div class="container-fluid about bg-light py-5">
+            <div class="container py-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9 text-center wow fadeInUp" data-wow-delay="0.1s">
+                        <h4 class="text-primary" style="text-transform:uppercase; letter-spacing:1px;">Objective</h4>
+                        <h2 class="display-5 mb-3">Built to give the soil its life back</h2>
+                        <p class="fs-5 text-dark mb-0">To develop a controlled bio-nitrogen system using urine, manure and compost that improves earthworm population and soil biological activity, enhances crop productivity sustainably, and reduces dependence on chemical fertilizers — using a mechanized solution (BhoomiShakti X1) for efficient soil mixing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Objective End -->
+
+
+        <!-- How It Works / Working Principle Start -->
+        <div id="how-it-works" class="container-fluid bg-dark py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 820px;">
+                    <h4 class="text-primary" style="text-transform:uppercase; letter-spacing:1px;">How JeevaDhara Works</h4>
+                    <h2 class="display-4 text-white mb-3">The Working Principle</h2>
+                    <p class="text-white-50 mb-0">Aged manure, compost, soil and cocopeat are mixed dry, then a diluted urine solution (1:8) is added gradually and stabilized for 24–48 hours. During this time, urea from the urine converts into ammonium and then into nitrate by soil microorganisms, while the compost regulates the release — giving a controlled, non-toxic nutrient supply instead of a fast, harsh one. The stabilized mix is then loaded into BhoomiShakti X1, which moves across the field and uses rotary blades to mix it evenly into the soil.</p>
+                </div>
+                <div class="jd-flow wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="jd-flow-node">
+                        <div class="jd-flow-icon"><i class="fas fa-layer-group"></i></div>
+                        <h6>Mix Dry Materials</h6>
+                    </div>
+                    <div class="jd-flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="jd-flow-node">
+                        <div class="jd-flow-icon"><i class="fas fa-tint"></i></div>
+                        <h6>Add Diluted Urine &amp; Stabilize 24–48 Hrs</h6>
+                    </div>
+                    <div class="jd-flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="jd-flow-node">
+                        <div class="jd-flow-icon"><i class="fas fa-tractor"></i></div>
+                        <h6>Load Into BhoomiShakti X1</h6>
+                    </div>
+                    <div class="jd-flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="jd-flow-node">
+                        <div class="jd-flow-icon"><i class="fas fa-cogs"></i></div>
+                        <h6>Rotary Blades Mix Into Soil</h6>
+                    </div>
+                    <div class="jd-flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="jd-flow-node">
+                        <div class="jd-flow-icon"><i class="fas fa-seedling"></i></div>
+                        <h6>Uniform Nutrient Distribution</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- How It Works / Working Principle End -->
+
+
+        <!-- Key Features Start -->
+        <div id="features" class="container-fluid service py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary" style="text-transform:uppercase; letter-spacing:1px;">System Overview</h4>
+                    <h2 class="display-4 text-white mb-3">Key Features</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="project-card h-100">
+                            <div class="project-icon"><i class="fas fa-flask"></i></div>
+                            <h5>Controlled Bio-Nitrogen Release</h5>
+                            <p>Urea from urine converts to ammonium, then nitrate, for steady nutrient availability instead of a toxic, fast release.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="project-card h-100">
+                            <div class="project-icon"><i class="fas fa-layer-group"></i></div>
+                            <h5>Simple, Proven Composition</h5>
+                            <p>Aged manure, compost, soil and cocopeat blended in a set ratio, wetted with diluted (1:8) urine.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="project-card h-100">
+                            <div class="project-icon"><i class="fas fa-bug"></i></div>
+                            <h5>Restores Earthworms &amp; Soil Life</h5>
+                            <p>Supports earthworm population growth and microbial diversity within 4–8 weeks.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="project-card h-100">
+                            <div class="project-icon"><i class="fas fa-tractor"></i></div>
+                            <h5>Mechanized With BhoomiShakti X1</h5>
+                            <p>Rotary blades ensure uniform incorporation into soil, cutting labour and time by an estimated 60–70%.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="project-card h-100">
+                            <div class="project-icon"><i class="fas fa-tint"></i></div>
+                            <h5>Better Soil Structure &amp; Moisture</h5>
+                            <p>Improves aeration and moisture retention, alongside stable crop productivity.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="project-card h-100">
+                            <div class="project-icon"><i class="fas fa-leaf"></i></div>
+                            <h5>Eco-Friendly &amp; Cost-Effective</h5>
+                            <p>Reduces chemical dependency and pollution while supporting safer food and fodder.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Key Features End -->
+
+
+        <!-- Applications Start -->
+        <div class="container-fluid about bg-light py-5">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.1s">
+                        <h4 class="text-primary" style="text-transform:uppercase; letter-spacing:1px;">Applications</h4>
+                        <h2 class="display-4 mb-3">Where JeevaDhara Fits on the Farm</h2>
+                        <p class="fs-5 text-dark">A practical, scalable alternative for farms looking to move away from chemical urea.</p>
+                    </div>
+                    <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.2s">
+                        <div class="jd-app-item"><i class="fas fa-leaf"></i><span>Reducing or replacing chemical urea on small and marginal farms</span></div>
+                        <div class="jd-app-item"><i class="fas fa-bug"></i><span>Restoring earthworm populations and soil biological activity</span></div>
+                        <div class="jd-app-item"><i class="fas fa-tint"></i><span>Fields needing better moisture retention and soil structure</span></div>
+                        <div class="jd-app-item mb-0"><i class="fas fa-tractor"></i><span>Farms already using, or renting, BhoomiShakti X1 for mixing</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Applications End -->
+
+
+        <!-- Advantages Start -->
+        <div class="container-fluid bg-dark py-5">
+            <div class="container py-5">
+                <div class="jd-advantage-band wow fadeInUp" data-wow-delay="0.1s">
+                    <h4 style="text-transform:uppercase; letter-spacing:1px; color: var(--bhoomi-accent);">Advantages</h4>
+                    <p>BhoomiShakti JeevaDhara is eco-friendly, cost-effective and improves soil fertility over the long term. It supports earthworm populations, reduces chemical pollution and greenhouse gas emissions, and helps produce safer food and fodder for people and animals.</p>
+                </div>
+                <div class="jd-note-band wow fadeInUp" data-wow-delay="0.2s">
+                    <strong>Good to know:</strong> JeevaDhara is slower-acting than chemical fertilizers, needs 24–48 hours of preparation time before use, and works best with proper ongoing management. This system improves soil and health conditions — it does not directly cure diseases.
+                </div>
+            </div>
+        </div>
+        <!-- Advantages End -->
+
+
+        <!-- Book JeevaDhara / Rental Appointment Start -->
+        <div id="book-jd" class="container-fluid about bg-light py-5">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.1s">
+                        <h4 class="text-primary" style="text-transform:uppercase; letter-spacing:1px;">Book BhoomiShakti JeevaDhara</h4>
+                        <h2 class="display-5 mb-3">Book JeevaDhara for Your Field</h2>
+                        <p class="fs-5 text-dark mb-3">BhoomiShakti JeevaDhara is available for neighbouring farmers' fields, including the BhoomiShakti X1 mixing step. Share a few details about your field and preferred date, and we'll get back to you to confirm availability.</p>
+                        <p id="jdNowDisplay" class="text-dark mb-4" style="font-size:.9rem; opacity:.75;"></p>
+                        <div class="d-flex mb-3">
+                            <div class="text-primary"><i class="fas fa-phone fa-2x"></i></div>
+                            <div class="ms-3">
+                                <h6 class="mb-1">Prefer to call?</h6>
+                                <a href="tel:+012 345 67890" class="text-dark">+012 345 67890</a>
+                            </div>
+                        </div>
+                        <a href="index.html#projects" class="btn btn-secondary py-2 px-4">Back to Projects</a>
+                    </div>
+                    <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.2s">
+                        <!--
+                            Sends real emails via FormSubmit (no backend
+                            needed - works on GitHub Pages). One-time setup:
+                            1. Replace REPLACE_WITH_YOUR_EMAIL below with the
+                               email that should receive booking requests.
+                            2. Submit the form once after publishing -
+                               FormSubmit emails an "Activate Form" link to
+                               that address. Click it once and every request
+                               after that is delivered automatically.
+                            Docs: https://formsubmit.co/
+                        -->
+                        <form action="https://formsubmit.co/REPLACE_WITH_YOUR_EMAIL" method="POST" class="bhoomi-appointment-form">
+                            <input type="hidden" name="_subject" value="New BhoomiShakti JeevaDhara booking request">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_next" value="jeevadhara.html?sent=1#book-jd">
+                            <input type="hidden" name="Reason for Contact" value="Rent BhoomiShakti JeevaDhara Krishi System">
+                            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                            <div class="row g-4">
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control border-0" id="rname" name="Name" placeholder="Your Name" required>
+                                        <label for="rname">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control border-0" id="rphone" name="Phone" placeholder="Phone" required>
+                                        <label for="rphone">Your Phone</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control border-0" id="rvillage" name="Village / Location" placeholder="Village / Location" required>
+                                        <label for="rvillage">Village / Location</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="date" class="form-control border-0" id="rdate" name="Preferred Booking Date" required>
+                                        <label for="rdate">Preferred Date</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <select class="form-select border-0" id="rduration" name="Approx. Field Size / Duration">
+                                            <option value="Small plot (half day)">Small plot (half day)</option>
+                                            <option value="Medium field (full day)">Medium field (full day)</option>
+                                            <option value="Large field (2-3 days)">Large field (2-3 days)</option>
+                                            <option value="Multiple fields (more than 3 days)">Multiple fields (more than 3 days)</option>
+                                        </select>
+                                        <label for="rduration">Approx. Field Size / Duration</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control border-0" placeholder="Anything else we should know?" id="rmessage" name="Message" style="height: 110px"></textarea>
+                                        <label for="rmessage">Additional Details (optional)</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Booking Request</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Book JeevaDhara / Rental Appointment End -->
+
+        <!-- Live clock + "no past dates" restriction for the JeevaDhara
+             booking form. Keeps working even if js/main.js isn't edited. -->
+        <script>
+        (function () {
+            var dateInput = document.getElementById('rdate');
+            if (dateInput) {
+                var tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                var yyyy = tomorrow.getFullYear();
+                var mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+                var dd = String(tomorrow.getDate()).padStart(2, '0');
+                dateInput.min = yyyy + '-' + mm + '-' + dd;
+            }
+
+            var nowDisplay = document.getElementById('jdNowDisplay');
+            if (nowDisplay) {
+                var options = {
+                    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+                    hour: '2-digit', minute: '2-digit', second: '2-digit'
+                };
+                function updateNow() {
+                    nowDisplay.textContent = 'Today is ' + new Date().toLocaleString('en-IN', options);
+                }
+                updateNow();
+                setInterval(updateNow, 1000);
+            }
+        })();
+        </script>
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container py-5">
+                <div class="row g-5 mb-5 align-items-center">
+                    <div class="col-lg-7">
+                        <div class="position-relative mx-auto">
+                            <input class="form-control w-100 py-3 ps-4 pe-5" type="text" placeholder="Email address to Subscribe" data-i18n-placeholder="footer.subscribePlaceholder">
+                            <button type="button" class="btn btn-primary position-absolute top-0 end-0 py-2 px-4 mt-2 me-2" data-i18n="footer.subscribeBtn">Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-light btn-md-square me-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <div class="footer-item">
+                                <h3 class="text-white mb-4"><i class="fas fa-leaf text-primary me-3"></i>BhoomiShakti JeevaDhara</h3>
+                                <p class="mb-3">A controlled bio-nutrient soil system — aged manure, compost and diluted urine, mixed into the field with BhoomiShakti X1 — built to restore soil life.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4" data-i18n="footer.quickLinksHeading">Quick Links</h4>
+                            <a href="index.html" data-i18n="footer.quickLink.home"> Home</a>
+                            <a href="about.html" data-i18n="footer.quickLink.about"> About us</a>
+                            <a href="service.html" data-i18n="footer.quickLink.service"> Service</a>
+                            <a href="testimonial.html" data-i18n="footer.quickLink.testimonial"> Testimonial</a>
+                            <a href="contact.html" data-i18n="footer.quickLink.contact"> Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4" data-i18n="footer.solutionsHeading">Our Solutions</h4>
+                            <a href="#" data-i18n="footer.solutions.plough"> Ploughing Equipment</a>
+                            <a href="#" data-i18n="footer.solutions.soil"> Soil Monitoring</a>
+                            <a href="#" data-i18n="footer.solutions.irrigation"> Smart Irrigation</a>
+                            <a href="#" data-i18n="footer.solutions.advisory"> Crop Advisory</a>
+                            <a href="#" data-i18n="footer.solutions.support"> Farm Support</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4" data-i18n="footer.contactHeading">Contact Info</h4>
+                            <a href="#"><i class="fa fa-map-marker-alt text-primary me-2"></i><span data-i18n="footer.addressText"> 123 Street, New York, USA</span></a>
+                            <a href="mailto:info@example.com"><i class="fas fa-envelope text-primary me-2"></i> info@example.com</a>
+                            <a href="tel:+012 345 67890"><i class="fas fa-phone text-primary me-2"></i> +012 345 67890</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i><span data-i18n="copyright.siteName">Your Site Name</span></a><span data-i18n="copyright.rightsReserved">, All right reserved.</span></span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-body">
+                        <!--/*** The author's attribution link must remain intact in the template. ***/-->
+                        Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/i18n-data.js"></script>
+        <script src="js/i18n.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+
+</html>

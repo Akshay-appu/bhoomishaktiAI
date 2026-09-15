@@ -55,6 +55,103 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <style>
+
+/* =========================================================
+   BHOOMISHAKTI MOBILE NAVBAR
+   Keeps desktop design unchanged
+   ========================================================= */
+
+
+<style>
+@media (max-width: 991.98px) {
+
+    /* Pages / Innovations */
+    #navbarCollapse .dropdown {
+        width: 100% !important;
+        text-align: center !important;
+        margin: 2px 0 !important;
+    }
+
+    #navbarCollapse .dropdown > .nav-link {
+        width: auto !important;
+        min-height: 48px !important;
+
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        padding: 12px 18px !important;
+        margin: 0 auto !important;
+
+        color: #ffffff !important;
+        background: transparent !important;
+
+        border-radius: 4px !important;
+        text-align: center !important;
+    }
+
+    #navbarCollapse .dropdown > .nav-link:hover,
+    #navbarCollapse .dropdown > .nav-link:focus,
+    #navbarCollapse .dropdown > .nav-link:active {
+        color: #ffffff !important;
+        background: #087a50 !important;
+    }
+
+    /* Correct dropdown arrow */
+    #navbarCollapse .dropdown-toggle::before {
+        display: none !important;
+        content: none !important;
+    }
+
+    #navbarCollapse .dropdown-toggle::after {
+        display: inline-block !important;
+        margin-left: 8px !important;
+        vertical-align: middle !important;
+    }
+
+    /* Dropdown options */
+    #navbarCollapse .dropdown-menu {
+        position: static !important;
+        transform: none !important;
+
+        width: 90% !important;
+        max-width: 420px !important;
+
+        margin: 0 auto !important;
+        padding: 4px 0 !important;
+
+        border: 0 !important;
+        border-radius: 0 !important;
+
+        background: #043d2b !important;
+        box-shadow: none !important;
+
+        text-align: left !important;
+    }
+
+    #navbarCollapse .dropdown-item {
+        display: block !important;
+
+        width: 100% !important;
+
+        padding: 11px 28px !important;
+
+        color: #ffffff !important;
+        background: transparent !important;
+
+        font-size: 15px !important;
+    }
+
+    #navbarCollapse .dropdown-item:hover,
+    #navbarCollapse .dropdown-item:focus,
+    #navbarCollapse .dropdown-item:active {
+        color: #ffffff !important;
+        background: #087a50 !important;
+    }
+
+}
+</style>
     </head>
 
     <body>
@@ -70,10 +167,11 @@
             </div>
         </div>
         <!-- Spinner End -->
+         
 
         
 
-         <!-- Navbar & Hero Start -->
+        <!-- Navbar & Hero Start -->
         <div class="container-fluid header-top">
             <div class="container d-flex align-items-center">
                 <div class="d-flex align-items-center h-100">
@@ -125,19 +223,63 @@
                                     <a href="service.html" class="nav-item nav-link" data-i18n="nav.service">Service</a>
                                     <a href="index.html#projects" class="nav-item nav-link" data-i18n="nav.projects">Projects</a>
                                     <div class="nav-item dropdown">
-                                        <a href="#" class="nav-link" data-bs-toggle="dropdown">
-                                            <span class="dropdown-toggle" data-i18n="nav.pages">Innovations</span>
-                                        </a>
-                                        <div class="dropdown-menu">
-                                            <a href="team.html" class="dropdown-item" data-i18n="nav.ourTeam">Our team</a>
-                                            <a href="x1.html" class="dropdown-item" data-i18n="nav.BhoomiShakti X1">BhoomiShakti X1</a>
-                                            <a href="s4.html" class="dropdown-item" data-i18n="nav.BhoomiShakti S4">BhoomiShakti S4</a>
-                                            <a href="BSJDK.html" class="dropdown-item" data-i18n="nav.BhoomiShakti JDKS">BhoomiShakti JDKS</a>
-                                            <a href="https://bhoomishakti-agri-digital-final-omega.vercel.app/" class="dropdown-item" data-i18n="nav.BhoomiShakti Agri Digital">BhoomiShakti Agri Digital</a>
-                                            <a href="bhoomishakti-app.html" class="dropdown-item" data-i18n="testimonial.eyebrow">BhoomiShakti AI</a>
-                                            <a href="404.html" class="dropdown-item" data-i18n="nav.404">404 Page</a>
-                                        </div>
-                                    </div>
+
+    <a href="javascript:void(0);"
+       class="nav-link dropdown-toggle"
+       data-bs-toggle="dropdown"
+       aria-expanded="false">
+
+        <span data-i18n="nav.pages">Pages</span>
+
+    </a>
+
+    <div class="dropdown-menu">
+
+        <a href="team.html"
+           class="dropdown-item"
+           data-i18n="nav.ourTeam">
+            Our team
+        </a>
+
+        <a href="x1.html"
+           class="dropdown-item"
+           data-i18n="nav.BhoomiShakti X1">
+            BhoomiShakti X1
+        </a>
+
+        <a href="s4.html"
+           class="dropdown-item"
+           data-i18n="nav.BhoomiShakti S4">
+            BhoomiShakti S4
+        </a>
+
+        <a href="BSJDK.html"
+           class="dropdown-item"
+           data-i18n="nav.BhoomiShakti JDKS">
+            BhoomiShakti JDKS
+        </a>
+
+        <a href="https://bhoomishakti-agri-digital-final-omega.vercel.app/"
+           class="dropdown-item"
+           data-i18n="nav.BhoomiShakti Agri Digital">
+            BhoomiShakti Agri Digital
+        </a>
+
+        <a href="bhoomishakti-app.html"
+           class="dropdown-item"
+           data-i18n="nav.BhoomiShakti AI">
+            BhoomiShakti AI
+        </a>
+
+        <a href="404.html"
+           class="dropdown-item"
+           data-i18n="nav.404">
+            404 Page
+        </a>
+
+    </div>
+
+</div>
                                     <a href="contact.html" class="nav-item nav-link" data-i18n="nav.contact">Contact</a>
                                     <div class="nav-item theme-toggle-wrap d-flex align-items-center">
                                         <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle light and dark mode" title="Toggle light / dark mode" data-i18n-title="theme.toggleTitle">
@@ -155,7 +297,6 @@
             </div>
         </div>
         <!-- Navbar & Hero End -->
-
 
 
         <!-- Carousel Start -->
@@ -595,7 +736,7 @@
         <!-- Services End -->
 
         <!-- Testimonial Start -->
-        <div class="container-fluid testimonial bg-dark py-5">
+        <!-- <div class="container-fluid testimonial bg-dark py-5">
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-6 col-xl-5 wow fadeInUp" data-wow-delay="0.2s">
@@ -674,12 +815,12 @@
                     </div>
                 </div>
             </div>
-         </div>
+         </div> -->
         <!-- Testimonial End -->
 
 
         <!-- Team Start -->
-         <div class="container-fluid team py-5">
+         <!-- <div class="container-fluid team py-5">
             <div class="container py-5">
                 <div class="d-flex flex-column mx-auto text-center mb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                     <h4 class="text-primary" data-i18n="team.eyebrow">Our Team</h4>
@@ -758,7 +899,7 @@
                     </div>
                 </div>
             </div>
-         </div>
+         </div> -->
         <!-- Team End -->
 
 
@@ -785,8 +926,9 @@
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <div class="footer-item">
-                                <h3 class="text-white mb-4"><i class="fas fa-leaf text-primary me-3"></i>BhoomiShakti X1</h3>
-                                <p class="mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
+                                <h3 class="text-white mb-4"><i class="fas fa-leaf text-primary me-3"></i>BhoomiShakti </h3>
+                                <p class="mb-3">An Integrated Agriculture Intelligence and Direct Agri-Ecosystem Platform for Sustainable and Precision Farming
+.</p>
                             </div>
                         </div>
                     </div>
@@ -796,28 +938,29 @@
                             <a href="#" data-i18n="footer.quickLink.home"> Home</a>
                             <a href="#" data-i18n="footer.quickLink.about"> About us</a>
                             <a href="#" data-i18n="footer.quickLink.service"> Service</a>
-                            <a href="#" data-i18n="footer.quickLink.testimonial"> Testimonial</a>
+                            <!-- <a href="#" data-i18n="footer.quickLink.testimonial"> Testimonial</a> -->
                             <a href="#" data-i18n="footer.quickLink.contact"> Contact Us</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="text-white mb-4" data-i18n="footer.solutionsHeading">Our Solutions</h4>
-                            <a href="#" data-i18n="footer.solutions.plough"> Ploughing Equipment</a>
-                            <a href="#" data-i18n="footer.solutions.soil"> Soil Monitoring</a>
-                            <a href="#" data-i18n="footer.solutions.irrigation"> Smart Irrigation</a>
-                            <a href="#" data-i18n="footer.solutions.advisory"> Crop Advisory</a>
-                            <a href="#" data-i18n="footer.solutions.support"> Farm Support</a>
+                            <a href="#" class="dropdown-item" data-i18n="nav.ourTeam">Our team</a>
+                                            <a href="x1.html" class="dropdown-item" data-i18n="nav.BhoomiShakti X1">BhoomiShakti X1</a>
+                                            <a href="s4.html" class="dropdown-item" data-i18n="nav.BhoomiShakti S4">BhoomiShakti S4</a>
+                                            <a href="BSJDK.html" class="dropdown-item" data-i18n="nav.BhoomiShakti JDKS">BhoomiShakti JDKS</a>
+                                            <a href="https://bhoomishakti-agri-digital-final-omega.vercel.app/" class="dropdown-item" data-i18n="nav.BhoomiShakti Agri Digital">BhoomiShakti Agri Digital</a>
+                                            <a href="bhoomishakti-app.html" class="dropdown-item" data-i18n="testimonial.eyebrow">BhoomiShakti AI</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="text-white mb-4" data-i18n="footer.contactHeading">Contact Info</h4>
-                            <a href="#"><i class="fa fa-map-marker-alt text-primary me-2"></i><span data-i18n="footer.addressText"> 123 Street, New York, USA</span></a>
-                            <a href="mailto:info@example.com"><i class="fas fa-envelope text-primary me-2"></i> info@example.com</a>
-                            <a href="mailto:info@example.com"><i class="fas fa-envelope text-primary me-2"></i> info@example.com</a>
-                            <a href="tel:+012 345 67890"><i class="fas fa-phone text-primary me-2"></i> +012 345 67890</a>
-                            <a href="tel:+012 345 67890" class="mb-3"><i class="fas fa-print text-primary me-2"></i> +012 345 67890</a>
+                            <!-- <a href="#"><i class="fa fa-map-marker-alt text-primary me-2"></i><span data-i18n="footer.addressText"> 123 Street, New York, USA</span></a> -->
+                            <a href="mailto:info@example.com"><i class="fas fa-envelope text-primary me-2"></i> bhoomishaktix1@gmail.com</a>
+                            <!-- <a href="mailto:info@example.com"><i class="fas fa-envelope text-primary me-2"></i> info@example.com</a> -->
+                            <a href="tel:+012 345 67890"><i class="fas fa-phone text-primary me-2"></i> +91 9663570643</a>
+                            <!-- <a href="tel:+012 345 67890" class="mb-3"><i class="fas fa-print text-primary me-2"></i> +012 345 67890</a> -->
                         </div>
                     </div>
                 </div>
@@ -831,12 +974,12 @@
             <div class="container">
                 <div class="row g-4 align-items-center">
                     <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i><span data-i18n="copyright.siteName">Your Site Name</span></a><span data-i18n="copyright.rightsReserved">, All right reserved.</span></span>
+                        <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i><span data-i18n="copyright.siteName">BhoomiShakti </span></a><span data-i18n="copyright.rightsReserved">, All right reserved.</span></span>
                     </div>
                     <div class="col-md-6 text-center text-md-end text-body">
                         <!--/*** The author’s attribution link must remain intact in the template. ***/-->
                         <!--/*** If you wish to remove this credit link, please purchase the Pro Version . ***/-->
-                        Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>
+                        Designed By <a class="border-bottom text-white" href="#">Akshay Kumar </a>
                     </div>
                 </div>
             </div>
@@ -861,6 +1004,197 @@
         <script src="js/i18n-data.js"></script>
         <script src="js/i18n.js"></script>
         <script src="js/main.js"></script>
+
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menu = document.getElementById("navbarCollapse");
+
+    if (!menu) return;
+
+    /*
+     * Use Bootstrap's REAL collapse instance.
+     * This is important because Bootstrap itself controls
+     * the navbar's open/close state.
+     */
+    function closeNavbar() {
+
+        if (window.innerWidth >= 992) return;
+
+        if (typeof bootstrap !== "undefined") {
+
+            const collapse =
+                bootstrap.Collapse.getOrCreateInstance(menu, {
+                    toggle: false
+                });
+
+            collapse.hide();
+
+        } else {
+
+            /* fallback */
+            menu.classList.remove("show");
+
+            const toggler =
+                document.querySelector(".navbar-toggler");
+
+            if (toggler) {
+                toggler.classList.add("collapsed");
+                toggler.setAttribute("aria-expanded", "false");
+            }
+        }
+    }
+
+
+    /*
+     * CLOSE WHEN ANY NAVIGATION LINK IS CLICKED
+     *
+     * Home
+     * About
+     * Service
+     * Projects
+     * Contact
+     * First Version
+     * Innovation items
+     */
+    menu.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            /* Do not close when clicking the Innovations
+               dropdown button itself */
+            if (link.getAttribute("data-bs-toggle") === "dropdown") {
+                return;
+            }
+
+            closeNavbar();
+
+        });
+
+    });
+
+
+    /*
+     * CLOSE WHEN CLICKING OUTSIDE THE OPEN MOBILE MENU
+     */
+    document.addEventListener("click", function (event) {
+
+        if (window.innerWidth >= 992) return;
+
+        const navbar =
+            event.target.closest(".navbar");
+
+        if (!navbar) {
+            closeNavbar();
+        }
+
+    });
+
+
+    /*
+     * CLOSE AFTER CLICKING AN INNOVATION ITEM
+     */
+    menu.querySelectorAll(".dropdown-item").forEach(function (item) {
+
+        item.addEventListener("click", function () {
+            closeNavbar();
+        });
+
+    });
+
+
+    /*
+     * WHEN THE MENU FINISHES CLOSING,
+     * MAKE SURE THE TOGGLE BUTTON IS RESET.
+     */
+    menu.addEventListener("hidden.bs.collapse", function () {
+
+        const toggler =
+            document.querySelector(".navbar-toggler");
+
+        if (toggler) {
+
+            toggler.classList.add("collapsed");
+
+            toggler.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+        }
+
+    });
+
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menu = document.getElementById("navbarCollapse");
+    const toggler = document.querySelector(".navbar-toggler");
+
+    if (!menu || !toggler) return;
+
+
+    function closeMobileMenu() {
+
+        if (window.innerWidth >= 992) return;
+
+        if (menu.classList.contains("show")) {
+
+            toggler.click();
+
+        }
+
+    }
+
+
+    /* Close when clicking normal navigation links */
+    menu.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            if (
+                link.hasAttribute("data-bs-toggle") &&
+                link.getAttribute("data-bs-toggle") === "dropdown"
+            ) {
+                return;
+            }
+
+            closeMobileMenu();
+
+        });
+
+    });
+
+
+    /* Close when clicking outside navbar */
+    document.addEventListener("click", function (event) {
+
+        if (window.innerWidth >= 992) return;
+
+        if (!event.target.closest(".navbar")) {
+
+            closeMobileMenu();
+
+        }
+
+    });
+
+
+    /* Close after selecting a dropdown item */
+    menu.querySelectorAll(".dropdown-item").forEach(function (item) {
+
+        item.addEventListener("click", function () {
+
+            closeMobileMenu();
+
+        });
+
+    });
+
+});
+</script>
     </body>
 
 

@@ -807,6 +807,435 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+        <!-- ✅ RESPONSIVE FIX -->
+<script>
+function responsiveFix() {
+    let screen = window.innerWidth;
+    let main = document.getElementById("mainSection");
+
+    if (screen < 768) {
+        main.style.flexDirection = "column";
+    } else {
+        main.style.flexDirection = "row";
+    }
+}
+
+window.addEventListener("load", responsiveFix);
+window.addEventListener("resize", responsiveFix);
+</script>
+
+<!-- ✅ SLIDER JS -->
+<script>
+const container = document.getElementById("imageBox");
+const slider = document.getElementById("sliderMain");
+const afterImg = document.getElementById("afterImgMain");
+
+let isDragging = false;
+
+slider.addEventListener("mousedown", () => isDragging = true);
+window.addEventListener("mouseup", () => isDragging = false);
+
+window.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+
+    let rect = container.getBoundingClientRect();
+    let x = e.clientX - rect.left;
+
+    x = Math.max(0, Math.min(x, rect.width));
+
+    let percent = (x / rect.width) * 100;
+
+    slider.style.left = percent + "%";
+    afterImg.style.width = percent + "%";
+});
+
+/* MOBILE TOUCH */
+slider.addEventListener("touchstart", () => isDragging = true);
+window.addEventListener("touchend", () => isDragging = false);
+
+window.addEventListener("touchmove", (e) => {
+    if (!isDragging) return;
+
+    let rect = container.getBoundingClientRect();
+    let x = e.touches[0].clientX - rect.left;
+
+    x = Math.max(0, Math.min(x, rect.width));
+
+    let percent = (x / rect.width) * 100;
+
+    slider.style.left = percent + "%";
+    afterImg.style.width = percent + "%";
+});               
+function responsiveFix() {
+    let screen = window.innerWidth;
+    let main = document.getElementById("mainSection");
+    let image = document.getElementById("imageBox");
+    let content = document.getElementById("contentBox");
+
+    if (screen < 768) {
+        main.style.flexDirection = "column";
+        image.style.width = "100%";   // 🔥 FULL WIDTH IMAGE
+        content.style.width = "100%";
+    } else {
+        main.style.flexDirection = "row";
+        image.style.width = "48%";
+        content.style.width = "48%";
+    }
+}
+
+window.addEventListener("load", responsiveFix);
+window.addEventListener("resize", responsiveFix);
+</script>
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+         <!--start call Floating Button-->
+<!-- ➕ MAIN CONTAINER -->
+<div id="mainFloatingBtn" style="position: fixed;
+   bottom: 180px;
+   right: 35px;
+   z-index: 999;">
+
+  <!-- ➕ BUTTON -->
+  <div onclick="toggleMainMenu()" style="
+    width:65px; height:65px;
+    background: linear-gradient(135deg,#22c55e,#16a34a);
+    color:#fff;
+    font-size:32px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(34,197,94,0.7), 0 4px 15px rgba(0,0,0,0.3);
+    animation: mainGlow 1.8s infinite;
+  ">
+    +
+  </div>
+
+  <!-- 🔽 ICONS WRAPPER -->
+ <div id="allIcons" style="
+  position:absolute;
+  bottom:80px;
+  right:0;
+  display:none;
+  width:60px;
+  height:220px;
+">
+
+<style>
+#allIcons > div:nth-child(1) { position:absolute !important; bottom:30px; }
+#allIcons > div:nth-child(2) { position:absolute !important; bottom:70px; }
+#allIcons > div:nth-child(3) { position:absolute !important; bottom:140px; }
+
+/* STOP MOVEMENT */
+#allIcons > div {
+  position:absolute !important;
+}
+
+@keyframes zoomPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width:600px){
+    #chatbot { right:10px !important; bottom:20px !important; }
+    #chatBox { width:95vw !important; height:80vh !important; }
+}
+
+@keyframes premiumPulse {
+    0% { transform: scale(1); box-shadow: 0 0 10px rgba(34,197,94,0.5); }
+    50% { transform: scale(1.15); box-shadow: 0 0 25px rgba(34,197,94,0.9); }
+    100% { transform: scale(1); box-shadow: 0 0 10px rgba(34,197,94,0.5); }
+}
+
+/* ✅ FINAL MOBILE FIX */
+@media (max-width: 768px) {
+  #mainFloatingBtn {
+    right: 8px !important;
+    bottom: 150px !important;
+  }
+}
+</style>
+
+
+
+    <!-- 🔥 YOUR FULL EXISTING CODE (PASTE EXACTLY BELOW) -->
+
+    <!-- Call Button -->
+     <!-- Call Floating Button -->
+<div style="position:fixed; bottom:10px; right:3px; z-index:999;">
+
+  <!-- Call Icon -->
+  <div onclick="toggleCallBox()" 
+       style="width:60px; height:60px; background:#007bff; color:#fff;
+       font-size:24px; border-radius:50%; display:flex; align-items:center;
+       justify-content:center; cursor:pointer;
+
+       /* 🔥 Zoom Animation */
+       animation:zoomCall 2s infinite;">
+       
+       <i class="fas fa-phone-alt"></i>
+  </div>
+
+  <!-- Call Popup -->
+  <div id="callBox" 
+       style="width:260px; background:#fff; border-radius:10px;
+       box-shadow:0 5px 20px rgba(0,0,0,0.2); display:none;
+       margin-bottom:10px; overflow:hidden;">
+
+    <!-- Header -->
+    <div style="background:#007bff; color:#fff; padding:10px;
+                display:flex; justify-content:space-between;">
+      <strong>BhoomiShakti</strong>
+      <span>Call Support</span>
+    </div>
+
+    <!-- Body -->
+    <div style="padding:15px; font-size:14px;">
+      <p>📞 Need help?</p>
+      <p>Call us for instant<br> assistance.</p>
+    </div>
+
+    <!-- Footer -->
+    <div style="padding:10px; text-align:center;">
+      <a href="tel:+919663570643"
+         style="background:#007bff; color:#fff; padding:8px 15px;
+         border-radius:5px; text-decoration:none;">
+         Call Now
+      </a>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Animation -->
+<style>
+@keyframes zoomCall {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+</style>
+
+<!-- JavaScript -->
+<script>
+function toggleCallBox() {
+  const box = document.getElementById("callBox");
+
+  if (box.style.display === "block") {
+    box.style.display = "none";
+  } else {
+    box.style.display = "block";
+  }
+}
+
+// Close when clicking outside
+document.addEventListener("click", function (event) {
+  const box = document.getElementById("callBox");
+  const icon = event.target.closest("[onclick='toggleCallBox()']");
+
+  if (!box.contains(event.target) && !icon) {
+    box.style.display = "none";
+  }
+});
+</script>
+
+
+    <!-- WhatsApp -->
+   <!-- WhatsApp Floating Button -->
+<div style="position:fixed; bottom:80px; right:3px; z-index:999;">
+
+  <!-- Floating Icon -->
+  <div onclick="toggleWhatsAppBox()" 
+       style="width:60px; height:60px; background:#25D366; color:#fff;
+       font-size:26px; border-radius:50%; display:flex; align-items:center;
+       justify-content:center; cursor:pointer;
+
+       /* 🔥 Zoom Animation */
+       animation:zoomAnim 2s infinite;">
+       
+       <i class="fab fa-whatsapp"></i>
+  </div>
+
+  <!-- Popup Box -->
+  <div id="whatsappBox" 
+       style="width:260px; background:#fff; border-radius:10px;
+       box-shadow:0 5px 20px rgba(0,0,0,0.2); display:none;
+       margin-bottom:10px; overflow:hidden;">
+
+    <!-- Header -->
+    <div style="background:#25D366; color:#fff; padding:10px;
+                display:flex; justify-content:space-between;">
+      <strong>BhoomiShakti</strong>
+      <span>Online</span>
+    </div>
+
+    <!-- Body -->
+    <div style="padding:15px; font-size:14px;">
+      <p>👋 Hello! Welcome to BhoomiShakti.</p>
+      <p>How can we help you today?</p>
+    </div>
+
+    <!-- Footer -->
+    <div style="padding:10px; text-align:center;">
+      <a href="https://wa.me/919663570643?text=Hello%20I%20need%20consultation"
+         target="_blank"
+         style="background:#25D366; color:#fff; padding:8px 15px;
+         border-radius:5px; text-decoration:none;">
+         Start Chat
+      </a>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Animation -->
+<style>
+@keyframes zoomAnim {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+</style>
+
+<!-- JavaScript -->
+<script>
+function toggleWhatsAppBox() {
+  const box = document.getElementById("whatsappBox");
+
+  if (box.style.display === "block") {
+    box.style.display = "none";
+  } else {
+    box.style.display = "block";
+  }
+}
+
+// Close when clicking outside
+document.addEventListener("click", function (event) {
+  const box = document.getElementById("whatsappBox");
+  const icon = event.target.closest("[onclick='toggleWhatsAppBox()']");
+
+  if (!box.contains(event.target) && !icon) {
+    box.style.display = "none";
+  }
+});
+</script>
+
+     <!-- Google Review Floating Button -->
+<div style="position:fixed; bottom:150px; right:3px; z-index:999;">
+  <!-- Floating Icon -->
+  <div onclick="toggleGoogleBox()" 
+       style="width:60px; height:60px; background:#ea4335; color:#fff;
+       font-size:26px; border-radius:50%; display:flex; align-items:center;
+       justify-content:center; cursor:pointer;
+
+       /* 🔥 Zoom Animation */
+       animation:zoomGoogle 2s infinite;">
+       
+       <i class="fab fa-google"></i>
+  </div>
+
+  <!-- Review Box -->
+  <div id="googleBox" 
+       style="width:260px; background:#fff; border-radius:10px;
+       box-shadow:0 5px 20px rgba(0,0,0,0.2); display:none;
+       margin-bottom:10px; overflow:hidden;">
+
+    <!-- Header -->
+    <div style="background:#ea4335; color:#fff; padding:10px;
+                display:flex; justify-content:space-between;">
+      <strong>BhoomiShakti</strong>
+      <span>Leave a Review</span>
+    </div>
+
+    <!-- Body -->
+    <div style="padding:15px; font-size:14px;">
+      <p>⭐ We value your feedback!</p>
+      <p>Please share your experience with us on Google.</p>
+    </div>
+
+    <!-- Footer -->
+    <div style="padding:10px; text-align:center;">
+      <a href="#" 
+         target="_blank"
+         style="background:#ea4335; color:#fff; padding:8px 15px;
+         border-radius:5px; text-decoration:none;">
+         Write Review
+      </a>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Animation -->
+<style>
+@keyframes zoomGoogle {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+</style>
+
+<!-- JavaScript -->
+<script>
+function toggleGoogleBox() {
+  const box = document.getElementById("googleBox");
+
+  if (box.style.display === "block") {
+    box.style.display = "none";
+  } else {
+    box.style.display = "block";
+  }
+}
+
+// Close when clicking outside
+document.addEventListener("click", function (event) {
+  const box = document.getElementById("googleBox");
+  const icon = event.target.closest("[onclick='toggleGoogleBox()']");
+
+  if (!box.contains(event.target) && !icon) {
+    box.style.display = "none";
+  }
+});
+</script>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- 🎨 STYLE -->
+<style>
+@keyframes mainGlow {
+  0% { transform: scale(1); box-shadow:0 0 10px rgba(34,197,94,0.5); }
+  50% { transform: scale(1.15); box-shadow:0 0 25px rgba(34,197,94,0.9); }
+  100% { transform: scale(1); box-shadow:0 0 10px rgba(34,197,94,0.5); }
+}
+</style>
+
+<!-- ⚡ SCRIPT -->
+<script>
+function toggleMainMenu(){
+  let menu = document.getElementById("allIcons");
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+</script>
+
     </body>
 
 </html>

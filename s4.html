@@ -46,7 +46,218 @@
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
 
-       <style>
+        <!-- Page-specific styles for the S4 product page (kept inline so this
+             file can be dropped in on its own, without editing css/style.css).
+             Reuses the site's existing --bhoomi-* / --bs-* variables. Note:
+             S4 has no real product photo yet (unlike X1), so the hero below
+             is an original labelled diagram of the system, not a photo -
+             swap in img/s4-prototype.jpg later if/when a real photo exists.
+             IMPORTANT: .s4-hero-panel deliberately has NO "overflow: hidden" -
+             the discover-row cards below are meant to hang partly below the
+             panel's edge (position:absolute; bottom:-70px), and
+             overflow:hidden clips their buttons off. Do not add it back. -->
+        <style>
+            /* ---- Hero diagram + overlapping "discover" cards ---- */
+            .s4-hero-panel {
+                position: relative;
+                margin-bottom: 90px;
+                min-height: 460px;
+                border-radius: 8px;
+                background: linear-gradient(135deg, var(--bhoomi-dark-green), var(--bhoomi-secondary-green));
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 50px 20px 160px;
+            }
+            .s4-hero-panel h6 {
+                color: var(--bhoomi-accent);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: .8rem;
+                margin-bottom: 34px;
+            }
+            .s4-hero-note {
+                color: rgba(255,255,255,0.6);
+                font-size: .8rem;
+                margin: 22px 0 0;
+                text-align: center;
+            }
+            .s4-hero-note i { margin-right: 6px; }
+            .s4-orbit {
+                position: relative;
+                width: 300px;
+                height: 300px;
+                flex-shrink: 0;
+            }
+            .s4-orbit-core {
+                position: absolute;
+                top: 50%; left: 50%;
+                transform: translate(-50%, -50%);
+                width: 108px; height: 108px;
+                border-radius: 50%;
+                background: var(--bhoomi-accent);
+                color: var(--bhoomi-dark-green);
+                display: flex; align-items: center; justify-content: center;
+                font-size: 2.4rem;
+                box-shadow: 0 0 0 10px rgba(255,255,255,0.08);
+                z-index: 2;
+            }
+            .s4-orbit-icon {
+                position: absolute;
+                width: 92px; height: 92px;
+                border-radius: 50%;
+                background: rgba(255,255,255,0.12);
+                border: 1px solid rgba(255,255,255,0.28);
+                color: #fff;
+                display: flex; flex-direction: column; align-items: center; justify-content: center;
+                text-align: center;
+                font-size: 1.15rem;
+                padding: 6px;
+                z-index: 1;
+            }
+            .s4-orbit-icon span {
+                display: block;
+                font-size: .62rem;
+                line-height: 1.15;
+                margin-top: 5px;
+                color: rgba(255,255,255,0.85);
+                font-weight: 500;
+            }
+            .s4-orbit-icon.oi-top { top: 0; left: 50%; transform: translate(-50%, 0); }
+            .s4-orbit-icon.oi-right { top: 50%; right: 0; transform: translate(0, -50%); }
+            .s4-orbit-icon.oi-bottom { bottom: 0; left: 50%; transform: translate(-50%, 0); }
+            .s4-orbit-icon.oi-left { top: 50%; left: 0; transform: translate(0, -50%); }
+            .discover-row {
+                position: absolute;
+                left: 0; right: 0;
+                bottom: -70px;
+                display: flex;
+                justify-content: center;
+                gap: 24px;
+                padding: 0 24px;
+                flex-wrap: wrap;
+            }
+            .discover-card {
+                width: 260px;
+                background: rgba(6, 69, 44, 0.88);
+                backdrop-filter: blur(6px);
+                border: 1px solid rgba(255,255,255,0.18);
+                border-radius: 10px;
+                padding: 26px 24px;
+                color: #fff;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+                transition: transform .35s ease, box-shadow .35s ease;
+            }
+            .discover-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 28px 50px rgba(0,0,0,0.32);
+            }
+            .discover-card h5 {
+                color: #fff;
+                margin-bottom: 10px;
+            }
+            .discover-card p {
+                color: rgba(255,255,255,0.75);
+                font-size: .9rem;
+                margin-bottom: 18px;
+            }
+            .discover-card a.btn {
+                font-size: .78rem;
+                letter-spacing: .5px;
+                padding: 8px 22px;
+            }
+            @media (max-width: 767px) {
+                .discover-row { position: static; margin-top: -40px; }
+                .s4-hero-panel { margin-bottom: 24px; padding-bottom: 50px; }
+                .s4-orbit { width: 260px; height: 260px; }
+                .s4-orbit-core { width: 92px; height: 92px; font-size: 2rem; }
+                .s4-orbit-icon { width: 78px; height: 78px; font-size: 1rem; }
+            }
+
+            /* ---- Working principle flow ---- */
+            .s4-flow {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: stretch;
+                gap: 0;
+            }
+            .s4-flow-node {
+                width: 170px;
+                background: var(--bs-dark);
+                border: 1px solid rgba(255,255,255,0.12);
+                border-radius: 8px;
+                padding: 26px 16px;
+                text-align: center;
+                margin: 8px;
+                transition: transform .3s ease, border-color .3s ease;
+            }
+            .s4-flow-node:hover {
+                transform: translateY(-6px);
+                border-color: var(--bhoomi-accent);
+            }
+            .s4-flow-node .s4-flow-icon {
+                width: 54px; height: 54px;
+                border-radius: 50%;
+                background: var(--bhoomi-accent);
+                color: var(--bhoomi-dark-green);
+                display: flex; align-items: center; justify-content: center;
+                font-size: 1.3rem;
+                margin: 0 auto 12px;
+            }
+            .s4-flow-node h6 { color: #fff; font-size: .85rem; margin-bottom: 0; }
+            .s4-flow-arrow {
+                display: flex; align-items: center; justify-content: center;
+                color: var(--bhoomi-accent);
+                font-size: 1.2rem;
+                width: 34px;
+                flex-shrink: 0;
+            }
+            @media (max-width: 900px) {
+                .s4-flow { flex-direction: column; align-items: center; }
+                .s4-flow-arrow { transform: rotate(90deg); }
+            }
+
+            /* ---- Applications list ---- */
+            .s4-app-item {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                background: var(--bs-dark);
+                border: 1px solid rgba(255,255,255,0.12);
+                border-radius: 8px;
+                padding: 20px 22px;
+                margin-bottom: 18px;
+                transition: transform .3s ease;
+            }
+            .s4-app-item:hover { transform: translateX(6px); }
+            .s4-app-item i {
+                width: 42px; height: 42px;
+                border-radius: 50%;
+                background: var(--bhoomi-accent);
+                color: var(--bhoomi-dark-green);
+                display: flex; align-items: center; justify-content: center;
+                flex-shrink: 0;
+            }
+            .s4-app-item span { color: #fff; font-size: .95rem; }
+
+            /* ---- Advantages accent band ---- */
+            .s4-advantage-band {
+                background: linear-gradient(120deg, var(--bhoomi-primary-green), var(--bhoomi-secondary-green));
+                border-radius: 10px;
+                padding: 46px 40px;
+                text-align: center;
+                color: #fff;
+            }
+            .s4-advantage-band p {
+                font-size: 1.15rem;
+                max-width: 780px;
+                margin: 0 auto;
+                color: #fff;
+            }
+        </style>
+         <style>
 
 /* =========================================================
    BHOOMISHAKTI MOBILE NAVBAR
@@ -162,7 +373,7 @@
 
         
 
-         <!-- Navbar & Hero Start -->
+        <!-- Navbar & Hero Start -->
         <div class="container-fluid header-top">
             <div class="container d-flex align-items-center">
                 <div class="d-flex align-items-center h-100">
@@ -288,7 +499,11 @@
             </div>
         </div>
         <!-- Navbar & Hero End -->
+    </head>
 
+    <body>
+
+       
 
 
         <!-- Header / Breadcrumb Start -->
@@ -308,6 +523,54 @@
         </div>
         <!-- Header / Breadcrumb End -->
 
+        <!-- Carousel Start -->
+        <!-- <div class="header-carousel owl-carousel overflow-hidden">
+            <div class="header-carousel-item hero-section">
+                <div class="hero-bg-half-1"></div>
+                <div class="hero-shape-1"></div>
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-lg-7 animated fadeInLeft">
+                                <div class="text-sm-center text-md-start">
+                                    <h4 class="text-white text-uppercase fw-bold mb-4">BhoomiShakti X1</h4>
+                                    <h1 class="display-2 text-white mb-4" data-i18n="hero.slide1Title">Battery-powered (Zero fuel consumption)</h1>
+                                    <p class="mb-5 fs-5" data-i18n="hero.slide1Desc">a compact, battery-powered agricultural ploughing machine designed to empower small and marginal farmers.
+                                    </p>
+                                    <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
+                                        <a class="btn btn-light py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i><span data-i18n="hero.watchVideo"> Watch Video</span></a>
+                                        <a class="btn btn-primary py-3 px-4 px-md-5 ms-2" href="#" data-i18n="hero.learnMore">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-carousel-item hero-section">
+                <div class="hero-bg-half-2"></div>
+                <div class="hero-shape-2"></div>
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-lg-7 animated fadeInLeft">
+                                <div class="text-sm-center text-md-start">
+                                    <h4 class="text-white text-uppercase fw-bold mb-4">BHOOMISHAKTI</h4>
+                                    <h1 class="display-2 text-white mb-4" data-i18n="hero.slide2Title">One Ecosystem. Multiple Innovations. Stronger Rural Communities.</h1>
+                                    <p class="mb-5 fs-5" data-i18n="hero.slide2Desc">BhoomiShakti integrates smart agricultural machines, sustainable farming research, AI, digital services, rural connectivity and renewable biomass solutions into one technology ecosystem.
+                                    </p>
+                                    <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
+                                        <a class="btn btn-light py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i><span data-i18n="hero.watchVideo"> Watch Video</span></a>
+                                        <a class="btn btn-primary py-3 px-4 px-md-5 ms-2" href="#" data-i18n="hero.learnMore">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        <!-- </div> -->
+        <!-- Carousel End -->
 
         <!-- Hero Diagram + Discover Cards Start -->
         <div class="container-fluid bg-dark pt-5 pb-5">
@@ -488,14 +751,15 @@
         <!-- Advantages End -->
 
 
-        <!-- Book S4 / Rental Appointment Start -->
+       <!-- Book S4 / Rental Appointment Start -->
         <div id="book-s4" class="container-fluid about bg-light py-5">
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.1s">
                         <h4 class="text-primary" style="text-transform:uppercase; letter-spacing:1px;">Rent BhoomiShakti S4</h4>
                         <h2 class="display-5 mb-3">Book BhoomiShakti S4 for Your Field</h2>
-                        <p class="fs-5 text-dark mb-4">BhoomiShakti S4 is available to rent for neighbouring farmers. Share a few details about your field and preferred date, and we'll get back to you to confirm availability.</p>
+                        <p class="fs-5 text-dark mb-3">BhoomiShakti S4 is available to rent for neighbouring farmers. Share a few details about your field and preferred date, and we'll get back to you to confirm availability.</p>
+                        <p id="s4NowDisplay" class="text-dark mb-4" style="font-size:.9rem; opacity:.75;"></p>
                         <div class="d-flex mb-3">
                             <div class="text-primary"><i class="fas fa-phone fa-2x"></i></div>
                             <div class="ms-3">
@@ -576,6 +840,39 @@
         </div>
         <!-- Book S4 / Rental Appointment End -->
 
+        <!-- Live clock + "no past dates" restriction for the S4 rental form.
+             Keeps this working even if js/main.js isn't loaded/edited. -->
+        <script>
+        (function () {
+            // 1) Block yesterday and today - the date picker only allows
+            //    tomorrow onward.
+            var dateInput = document.getElementById('rdate');
+            if (dateInput) {
+                var tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                var yyyy = tomorrow.getFullYear();
+                var mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+                var dd = String(tomorrow.getDate()).padStart(2, '0');
+                dateInput.min = yyyy + '-' + mm + '-' + dd;
+            }
+
+            // 2) Live "today is ..." line - current day, date and time,
+            //    updating every second.
+            var nowDisplay = document.getElementById('s4NowDisplay');
+            if (nowDisplay) {
+                var options = {
+                    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+                    hour: '2-digit', minute: '2-digit', second: '2-digit'
+                };
+                function updateNow() {
+                    nowDisplay.textContent = 'Today is ' + new Date().toLocaleString('en-IN', options);
+                }
+                updateNow();
+                setInterval(updateNow, 1000);
+            }
+        })();
+        </script>
+
 
         <!-- Footer Start -->
         <div class="container-fluid footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
@@ -628,9 +925,9 @@
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="text-white mb-4" data-i18n="footer.contactHeading">Contact Info</h4>
-                            <a href="#"><i class="fa fa-map-marker-alt text-primary me-2"></i><span data-i18n="footer.addressText"> 123 Street, New York, USA</span></a>
-                            <a href="mailto:info@example.com"><i class="fas fa-envelope text-primary me-2"></i> info@example.com</a>
-                            <a href="tel:+012 345 67890"><i class="fas fa-phone text-primary me-2"></i> +012 345 67890</a>
+                            <!-- <a href="#"><i class="fa fa-map-marker-alt text-primary me-2"></i><span data-i18n="footer.addressText"> 123 Street, New York, USA</span></a> -->
+                            <a href="mailto:bhoomishaktix1@gmail.com"><i class="fas fa-envelope text-primary me-2"></i> bhoomishaktix1@gmail.com</a>
+                            <a href="tel:+91 9663570643"><i class="fas fa-phone text-primary me-2"></i> +91 9663570643</a>
                         </div>
                     </div>
                 </div>
@@ -644,11 +941,11 @@
             <div class="container">
                 <div class="row g-4 align-items-center">
                     <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i><span data-i18n="copyright.siteName">Your Site Name</span></a><span data-i18n="copyright.rightsReserved">, All right reserved.</span></span>
+                        <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i><span data-i18n="copyright.siteName"><www class="bhoomishakti in"></www></span></a><span data-i18n="copyright.rightsReserved">, All right reserved.</span></span>
                     </div>
                     <div class="col-md-6 text-center text-md-end text-body">
                         <!--/*** The author's attribution link must remain intact in the template. ***/-->
-                        Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>
+                        Designed By <a class="border-bottom text-white" href="#">Akshay Kumar K N</a>
                     </div>
                 </div>
             </div>
@@ -672,197 +969,6 @@
         <script src="js/i18n-data.js"></script>
         <script src="js/i18n.js"></script>
         <script src="js/main.js"></script>
-
-               <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const menu = document.getElementById("navbarCollapse");
-
-    if (!menu) return;
-
-    /*
-     * Use Bootstrap's REAL collapse instance.
-     * This is important because Bootstrap itself controls
-     * the navbar's open/close state.
-     */
-    function closeNavbar() {
-
-        if (window.innerWidth >= 992) return;
-
-        if (typeof bootstrap !== "undefined") {
-
-            const collapse =
-                bootstrap.Collapse.getOrCreateInstance(menu, {
-                    toggle: false
-                });
-
-            collapse.hide();
-
-        } else {
-
-            /* fallback */
-            menu.classList.remove("show");
-
-            const toggler =
-                document.querySelector(".navbar-toggler");
-
-            if (toggler) {
-                toggler.classList.add("collapsed");
-                toggler.setAttribute("aria-expanded", "false");
-            }
-        }
-    }
-
-
-    /*
-     * CLOSE WHEN ANY NAVIGATION LINK IS CLICKED
-     *
-     * Home
-     * About
-     * Service
-     * Projects
-     * Contact
-     * First Version
-     * Innovation items
-     */
-    menu.querySelectorAll("a").forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-            /* Do not close when clicking the Innovations
-               dropdown button itself */
-            if (link.getAttribute("data-bs-toggle") === "dropdown") {
-                return;
-            }
-
-            closeNavbar();
-
-        });
-
-    });
-
-
-    /*
-     * CLOSE WHEN CLICKING OUTSIDE THE OPEN MOBILE MENU
-     */
-    document.addEventListener("click", function (event) {
-
-        if (window.innerWidth >= 992) return;
-
-        const navbar =
-            event.target.closest(".navbar");
-
-        if (!navbar) {
-            closeNavbar();
-        }
-
-    });
-
-
-    /*
-     * CLOSE AFTER CLICKING AN INNOVATION ITEM
-     */
-    menu.querySelectorAll(".dropdown-item").forEach(function (item) {
-
-        item.addEventListener("click", function () {
-            closeNavbar();
-        });
-
-    });
-
-
-    /*
-     * WHEN THE MENU FINISHES CLOSING,
-     * MAKE SURE THE TOGGLE BUTTON IS RESET.
-     */
-    menu.addEventListener("hidden.bs.collapse", function () {
-
-        const toggler =
-            document.querySelector(".navbar-toggler");
-
-        if (toggler) {
-
-            toggler.classList.add("collapsed");
-
-            toggler.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-        }
-
-    });
-
-});
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const menu = document.getElementById("navbarCollapse");
-    const toggler = document.querySelector(".navbar-toggler");
-
-    if (!menu || !toggler) return;
-
-
-    function closeMobileMenu() {
-
-        if (window.innerWidth >= 992) return;
-
-        if (menu.classList.contains("show")) {
-
-            toggler.click();
-
-        }
-
-    }
-
-
-    /* Close when clicking normal navigation links */
-    menu.querySelectorAll("a").forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-            if (
-                link.hasAttribute("data-bs-toggle") &&
-                link.getAttribute("data-bs-toggle") === "dropdown"
-            ) {
-                return;
-            }
-
-            closeMobileMenu();
-
-        });
-
-    });
-
-
-    /* Close when clicking outside navbar */
-    document.addEventListener("click", function (event) {
-
-        if (window.innerWidth >= 992) return;
-
-        if (!event.target.closest(".navbar")) {
-
-            closeMobileMenu();
-
-        }
-
-    });
-
-
-    /* Close after selecting a dropdown item */
-    menu.querySelectorAll(".dropdown-item").forEach(function (item) {
-
-        item.addEventListener("click", function () {
-
-            closeMobileMenu();
-
-        });
-
-    });
-
-});
-</script>
     </body>
 
 </html>

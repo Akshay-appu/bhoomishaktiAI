@@ -27,7 +27,249 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <style>
+
+/* =========================================================
+   BHOOMISHAKTI MOBILE NAVBAR
+   Keeps desktop design unchanged
+   ========================================================= */
+
+
+<style>
+@media (max-width: 991.98px) {
+
+    /* Pages / Innovations */
+    #navbarCollapse .dropdown {
+        width: 100% !important;
+        text-align: center !important;
+        margin: 2px 0 !important;
+    }
+
+    #navbarCollapse .dropdown > .nav-link {
+        width: auto !important;
+        min-height: 48px !important;
+
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        padding: 12px 18px !important;
+        margin: 0 auto !important;
+
+        color: #ffffff !important;
+        background: transparent !important;
+
+        border-radius: 4px !important;
+        text-align: center !important;
+    }
+
+    #navbarCollapse .dropdown > .nav-link:hover,
+    #navbarCollapse .dropdown > .nav-link:focus,
+    #navbarCollapse .dropdown > .nav-link:active {
+        color: #ffffff !important;
+        background: #087a50 !important;
+    }
+
+    /* Correct dropdown arrow */
+    #navbarCollapse .dropdown-toggle::before {
+        display: none !important;
+        content: none !important;
+    }
+
+    #navbarCollapse .dropdown-toggle::after {
+        display: inline-block !important;
+        margin-left: 8px !important;
+        vertical-align: middle !important;
+    }
+
+    /* Dropdown options */
+    #navbarCollapse .dropdown-menu {
+        position: static !important;
+        transform: none !important;
+
+        width: 90% !important;
+        max-width: 420px !important;
+
+        margin: 0 auto !important;
+        padding: 4px 0 !important;
+
+        border: 0 !important;
+        border-radius: 0 !important;
+
+        background: #043d2b !important;
+        box-shadow: none !important;
+
+        text-align: left !important;
+    }
+
+    #navbarCollapse .dropdown-item {
+        display: block !important;
+
+        width: 100% !important;
+
+        padding: 11px 28px !important;
+
+        color: #ffffff !important;
+        background: transparent !important;
+
+        font-size: 15px !important;
+    }
+
+    #navbarCollapse .dropdown-item:hover,
+    #navbarCollapse .dropdown-item:focus,
+    #navbarCollapse .dropdown-item:active {
+        color: #ffffff !important;
+        background: #087a50 !important;
+    }
+
+}
+</style>
     </head>
+
+    <body>
+
+        <!-- BhoomiShakti dynamic-software layer -->
+        <div id="bhoomi-progress-bar"></div>
+        <div id="bhoomi-toast-container" aria-live="polite"></div>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+         
+
+        
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid header-top">
+            <div class="container d-flex align-items-center">
+                <div class="d-flex align-items-center h-100">
+                    <a href="#" class="navbar-brand" style="height: 125px;">
+                        <h1 class="text-primary mb-0 d-flex align-items-center">
+  <i class="fas fa-leaf me-2"></i>
+ BHOOMISHAKTI
+</h1><p>One Ecosystem. Multiple Innovations.Stronger Rural Communities.</p>
+                        <!-- <img src="img/logo.png" alt="Logo"> -->
+                    </a>
+                </div>
+                <div class="w-100 h-100">
+                    <div class="topbar px-0 py-2 d-none d-lg-block" style="height: 45px;">
+                        <div class="row gx-0 align-items-center">
+                            <div class="col-lg-8 text-center text-lg-center mb-lg-0">
+                                <div class="d-flex flex-wrap">
+                                    <div class="border-end border-primary pe-3">
+                                        <a href="https://maps.app.goo.gl/sNX8VTaiuvoWoPn77" class="text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i><span data-i18n="topbar.findLocation">Find A Location</span></a>
+                                    </div>
+                                    <div class="ps-3">
+                                        <a href="mailto:example@gmail.com" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>metaoffical4@gmail.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 text-center text-lg-end">
+                                <div class="d-flex justify-content-end">
+                                    <div class="d-flex border-end border-primary pe-3">
+                                        <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-youtube"></i></a>
+                                        <!-- <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a> -->
+                                        <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-instagram"></i></a>
+                                        <!-- <a class="btn p-0 text-primary me-0" href="#"><i class="fab fa-linkedin-in"></i></a> -->
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-bar px-0 py-lg-0" style="height: 80px;">
+                        <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-lg-end">
+                            <a href="#" class="navbar-brand-2">
+                                <h1 class="text-primary mb-0"><i class="fas fa-leaf"></i> BhoomiShakti</h1>
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                                <span class="fa fa-bars"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarCollapse">
+                                <div class="navbar-nav mx-0 mx-lg-auto bg-white">
+                                    <a href="index.html" class="nav-item nav-link active" data-i18n="nav.home">Home</a>
+                                    <a href="about.html" class="nav-item nav-link" data-i18n="nav.about">About</a>
+                                    <a href="service.html" class="nav-item nav-link" data-i18n="nav.service">Service</a>
+                                    <a href="index.html#projects" class="nav-item nav-link" data-i18n="nav.projects">Projects</a>
+                                    <div class="nav-item dropdown">
+
+    <a href="javascript:void(0);"
+       class="nav-link dropdown-toggle"
+       data-bs-toggle="dropdown"
+       aria-expanded="false">
+
+        <span data-i18n="nav.pages">Pages</span>
+
+    </a>
+
+    <div class="dropdown-menu">
+
+        <a href="team.html"
+           class="dropdown-item"
+           data-i18n="nav.ourTeam">
+            Our team
+        </a>
+
+        <a href="x1.html"
+           class="dropdown-item"
+           data-i18n="nav.BhoomiShakti X1">
+            BhoomiShakti X1
+        </a>
+
+        <a href="s4.html"
+           class="dropdown-item"
+           data-i18n="nav.BhoomiShakti S4">
+            BhoomiShakti S4
+        </a>
+
+        <a href="BSJDK.html"
+           class="dropdown-item"
+           data-i18n="nav.BhoomiShakti JDKS">
+            BhoomiShakti JDKS
+        </a>
+
+        <a href="https://bhoomishakti-agri-digital-final-omega.vercel.app/"
+           class="dropdown-item"
+           data-i18n="nav.BhoomiShakti Agri Digital">
+            BhoomiShakti Agri Digital
+        </a>
+
+        <a href="bhoomishakti-app.html"
+           class="dropdown-item"
+           data-i18n="nav.BhoomiShakti AI">
+            BhoomiShakti AI
+        </a>
+
+        <a href="404.html"
+           class="dropdown-item"
+           data-i18n="nav.404">
+            404 Page
+        </a>
+
+    </div>
+
+</div>
+                                    <a href="contact.html" class="nav-item nav-link" data-i18n="nav.contact">Contact</a>
+                                    <div class="nav-item theme-toggle-wrap d-flex align-items-center">
+                                        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle light and dark mode" title="Toggle light / dark mode" data-i18n-title="theme.toggleTitle">
+                                            <i class="fas fa-sun"></i>
+                                        </button>
+                                    </div>
+                                    <div class="nav-btn ps-3">
+                                        <a href="#" class="btn btn-primary py-2 px-4 ms-0 ms-lg-3" data-i18n="nav.ctaFirstVersion"> First Version</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
 
     <body>
 

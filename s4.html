@@ -46,214 +46,103 @@
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
 
-        <!-- Page-specific styles for the S4 product page (kept inline so this
-             file can be dropped in on its own, without editing css/style.css).
-             Reuses the site's existing --bhoomi-* / --bs-* variables. Note:
-             S4 has no real product photo yet (unlike X1), so the hero below
-             is an original labelled diagram of the system, not a photo -
-             swap in img/s4-prototype.jpg later if/when a real photo exists. -->
-        <style>
-            /* ---- Hero diagram + overlapping "discover" cards ---- */
-            .s4-hero-panel {
-                position: relative;
-                margin-bottom: 90px;
-                min-height: 460px;
-                border-radius: 8px;
-                background: linear-gradient(135deg, var(--bhoomi-dark-green), var(--bhoomi-secondary-green));
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 50px 20px 160px;
-                overflow: hidden;
-            }
-            .s4-hero-panel h6 {
-                color: var(--bhoomi-accent);
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                font-size: .8rem;
-                margin-bottom: 34px;
-            }
-            .s4-hero-note {
-                color: rgba(255,255,255,0.6);
-                font-size: .8rem;
-                margin: 22px 0 0;
-                text-align: center;
-            }
-            .s4-hero-note i { margin-right: 6px; }
-            .s4-orbit {
-                position: relative;
-                width: 300px;
-                height: 300px;
-                flex-shrink: 0;
-            }
-            .s4-orbit-core {
-                position: absolute;
-                top: 50%; left: 50%;
-                transform: translate(-50%, -50%);
-                width: 108px; height: 108px;
-                border-radius: 50%;
-                background: var(--bhoomi-accent);
-                color: var(--bhoomi-dark-green);
-                display: flex; align-items: center; justify-content: center;
-                font-size: 2.4rem;
-                box-shadow: 0 0 0 10px rgba(255,255,255,0.08);
-                z-index: 2;
-            }
-            .s4-orbit-icon {
-                position: absolute;
-                width: 92px; height: 92px;
-                border-radius: 50%;
-                background: rgba(255,255,255,0.12);
-                border: 1px solid rgba(255,255,255,0.28);
-                color: #fff;
-                display: flex; flex-direction: column; align-items: center; justify-content: center;
-                text-align: center;
-                font-size: 1.15rem;
-                padding: 6px;
-                z-index: 1;
-            }
-            .s4-orbit-icon span {
-                display: block;
-                font-size: .62rem;
-                line-height: 1.15;
-                margin-top: 5px;
-                color: rgba(255,255,255,0.85);
-                font-weight: 500;
-            }
-            .s4-orbit-icon.oi-top { top: 0; left: 50%; transform: translate(-50%, 0); }
-            .s4-orbit-icon.oi-right { top: 50%; right: 0; transform: translate(0, -50%); }
-            .s4-orbit-icon.oi-bottom { bottom: 0; left: 50%; transform: translate(-50%, 0); }
-            .s4-orbit-icon.oi-left { top: 50%; left: 0; transform: translate(0, -50%); }
-            .discover-row {
-                position: absolute;
-                left: 0; right: 0;
-                bottom: -70px;
-                display: flex;
-                justify-content: center;
-                gap: 24px;
-                padding: 0 24px;
-                flex-wrap: wrap;
-            }
-            .discover-card {
-                width: 260px;
-                background: rgba(6, 69, 44, 0.88);
-                backdrop-filter: blur(6px);
-                border: 1px solid rgba(255,255,255,0.18);
-                border-radius: 10px;
-                padding: 26px 24px;
-                color: #fff;
-                box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-                transition: transform .35s ease, box-shadow .35s ease;
-            }
-            .discover-card:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 28px 50px rgba(0,0,0,0.32);
-            }
-            .discover-card h5 {
-                color: #fff;
-                margin-bottom: 10px;
-            }
-            .discover-card p {
-                color: rgba(255,255,255,0.75);
-                font-size: .9rem;
-                margin-bottom: 18px;
-            }
-            .discover-card a.btn {
-                font-size: .78rem;
-                letter-spacing: .5px;
-                padding: 8px 22px;
-            }
-            @media (max-width: 767px) {
-                .discover-row { position: static; margin-top: -40px; }
-                .s4-hero-panel { margin-bottom: 24px; padding-bottom: 50px; }
-                .s4-orbit { width: 260px; height: 260px; }
-                .s4-orbit-core { width: 92px; height: 92px; font-size: 2rem; }
-                .s4-orbit-icon { width: 78px; height: 78px; font-size: 1rem; }
-            }
+       <style>
 
-            /* ---- Working principle flow ---- */
-            .s4-flow {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                align-items: stretch;
-                gap: 0;
-            }
-            .s4-flow-node {
-                width: 170px;
-                background: var(--bs-dark);
-                border: 1px solid rgba(255,255,255,0.12);
-                border-radius: 8px;
-                padding: 26px 16px;
-                text-align: center;
-                margin: 8px;
-                transition: transform .3s ease, border-color .3s ease;
-            }
-            .s4-flow-node:hover {
-                transform: translateY(-6px);
-                border-color: var(--bhoomi-accent);
-            }
-            .s4-flow-node .s4-flow-icon {
-                width: 54px; height: 54px;
-                border-radius: 50%;
-                background: var(--bhoomi-accent);
-                color: var(--bhoomi-dark-green);
-                display: flex; align-items: center; justify-content: center;
-                font-size: 1.3rem;
-                margin: 0 auto 12px;
-            }
-            .s4-flow-node h6 { color: #fff; font-size: .85rem; margin-bottom: 0; }
-            .s4-flow-arrow {
-                display: flex; align-items: center; justify-content: center;
-                color: var(--bhoomi-accent);
-                font-size: 1.2rem;
-                width: 34px;
-                flex-shrink: 0;
-            }
-            @media (max-width: 900px) {
-                .s4-flow { flex-direction: column; align-items: center; }
-                .s4-flow-arrow { transform: rotate(90deg); }
-            }
+/* =========================================================
+   BHOOMISHAKTI MOBILE NAVBAR
+   Keeps desktop design unchanged
+   ========================================================= */
 
-            /* ---- Applications list ---- */
-            .s4-app-item {
-                display: flex;
-                align-items: center;
-                gap: 16px;
-                background: var(--bs-dark);
-                border: 1px solid rgba(255,255,255,0.12);
-                border-radius: 8px;
-                padding: 20px 22px;
-                margin-bottom: 18px;
-                transition: transform .3s ease;
-            }
-            .s4-app-item:hover { transform: translateX(6px); }
-            .s4-app-item i {
-                width: 42px; height: 42px;
-                border-radius: 50%;
-                background: var(--bhoomi-accent);
-                color: var(--bhoomi-dark-green);
-                display: flex; align-items: center; justify-content: center;
-                flex-shrink: 0;
-            }
-            .s4-app-item span { color: #fff; font-size: .95rem; }
 
-            /* ---- Advantages accent band ---- */
-            .s4-advantage-band {
-                background: linear-gradient(120deg, var(--bhoomi-primary-green), var(--bhoomi-secondary-green));
-                border-radius: 10px;
-                padding: 46px 40px;
-                text-align: center;
-                color: #fff;
-            }
-            .s4-advantage-band p {
-                font-size: 1.15rem;
-                max-width: 780px;
-                margin: 0 auto;
-                color: #fff;
-            }
-        </style>
+<style>
+@media (max-width: 991.98px) {
+
+    /* Pages / Innovations */
+    #navbarCollapse .dropdown {
+        width: 100% !important;
+        text-align: center !important;
+        margin: 2px 0 !important;
+    }
+
+    #navbarCollapse .dropdown > .nav-link {
+        width: auto !important;
+        min-height: 48px !important;
+
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        padding: 12px 18px !important;
+        margin: 0 auto !important;
+
+        color: #ffffff !important;
+        background: transparent !important;
+
+        border-radius: 4px !important;
+        text-align: center !important;
+    }
+
+    #navbarCollapse .dropdown > .nav-link:hover,
+    #navbarCollapse .dropdown > .nav-link:focus,
+    #navbarCollapse .dropdown > .nav-link:active {
+        color: #ffffff !important;
+        background: #087a50 !important;
+    }
+
+    /* Correct dropdown arrow */
+    #navbarCollapse .dropdown-toggle::before {
+        display: none !important;
+        content: none !important;
+    }
+
+    #navbarCollapse .dropdown-toggle::after {
+        display: inline-block !important;
+        margin-left: 8px !important;
+        vertical-align: middle !important;
+    }
+
+    /* Dropdown options */
+    #navbarCollapse .dropdown-menu {
+        position: static !important;
+        transform: none !important;
+
+        width: 90% !important;
+        max-width: 420px !important;
+
+        margin: 0 auto !important;
+        padding: 4px 0 !important;
+
+        border: 0 !important;
+        border-radius: 0 !important;
+
+        background: #043d2b !important;
+        box-shadow: none !important;
+
+        text-align: left !important;
+    }
+
+    #navbarCollapse .dropdown-item {
+        display: block !important;
+
+        width: 100% !important;
+
+        padding: 11px 28px !important;
+
+        color: #ffffff !important;
+        background: transparent !important;
+
+        font-size: 15px !important;
+    }
+
+    #navbarCollapse .dropdown-item:hover,
+    #navbarCollapse .dropdown-item:focus,
+    #navbarCollapse .dropdown-item:active {
+        color: #ffffff !important;
+        background: #087a50 !important;
+    }
+
+}
+</style>
     </head>
 
     <body>
@@ -269,14 +158,19 @@
             </div>
         </div>
         <!-- Spinner End -->
+         
 
+        
 
         <!-- Navbar & Hero Start -->
         <div class="container-fluid header-top">
             <div class="container d-flex align-items-center">
                 <div class="d-flex align-items-center h-100">
                     <a href="#" class="navbar-brand" style="height: 125px;">
-                        <h1 class="text-primary mb-0"><i class="fas fa-leaf"></i> BhoomiShakti X1</h1>
+                        <h1 class="text-primary mb-0 d-flex align-items-center">
+  <i class="fas fa-leaf me-2"></i>
+ BHOOMISHAKTI
+</h1><p>One Ecosystem. Multiple Innovations.Stronger Rural Communities.</p>
                         <!-- <img src="img/logo.png" alt="Logo"> -->
                     </a>
                 </div>
@@ -286,68 +180,105 @@
                             <div class="col-lg-8 text-center text-lg-center mb-lg-0">
                                 <div class="d-flex flex-wrap">
                                     <div class="border-end border-primary pe-3">
-                                        <a href="#" class="text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
+                                        <a href="https://maps.app.goo.gl/sNX8VTaiuvoWoPn77" class="text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i><span data-i18n="topbar.findLocation">Find A Location</span></a>
                                     </div>
                                     <div class="ps-3">
-                                        <a href="mailto:example@gmail.com" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>example@gmail.com</a>
+                                        <a href="mailto:example@gmail.com" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>metaoffical4@gmail.com</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 text-center text-lg-end">
                                 <div class="d-flex justify-content-end">
                                     <div class="d-flex border-end border-primary pe-3">
-                                        <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a>
+                                        <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-youtube"></i></a>
+                                        <!-- <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a> -->
                                         <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-instagram"></i></a>
-                                        <a class="btn p-0 text-primary me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                        <!-- <a class="btn p-0 text-primary me-0" href="#"><i class="fab fa-linkedin-in"></i></a> -->
                                     </div>
-                                    <div class="dropdown ms-3">
-                                        <a href="#" class="dropdown-toggle text-white" data-bs-toggle="dropdown"><small class="text-body"><i class="fas fa-globe-europe text-primary me-2"></i> English</small></a>
-                                        <div class="dropdown-menu">
-                                            <a href="#" class="dropdown-item">English</a>
-                                            <a href="#" class="dropdown-item">Bangla</a>
-                                            <a href="#" class="dropdown-item">French</a>
-                                            <a href="#" class="dropdown-item">Spanish</a>
-                                            <a href="#" class="dropdown-item">Arabic</a>
-                                        </div>
                                     </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="nav-bar px-0 py-lg-0" style="height: 80px;">
                         <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-lg-end">
                             <a href="#" class="navbar-brand-2">
-                                <h1 class="text-primary mb-0"><i class="fas fa-leaf"></i> BhoomiShakti X1</h1>
-                                <!-- <img src="img/logo.png" alt="Logo"> -->
-                            </a>  
+                                <h1 class="text-primary mb-0"><i class="fas fa-leaf"></i> BhoomiShakti</h1>
+                            </a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                                 <span class="fa fa-bars"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarCollapse">
                                 <div class="navbar-nav mx-0 mx-lg-auto bg-white">
-                                    <a href="index.html" class="nav-item nav-link">Home</a>
-                                    <a href="about.html" class="nav-item nav-link active">About</a>
-                                    <a href="service.html" class="nav-item nav-link">Service</a>
-                                    <a href="index.html#projects" class="nav-item nav-link">Projects</a>
+                                    <a href="index.html" class="nav-item nav-link active" data-i18n="nav.home">Home</a>
+                                    <a href="about.html" class="nav-item nav-link" data-i18n="nav.about">About</a>
+                                    <a href="service.html" class="nav-item nav-link" data-i18n="nav.service">Service</a>
+                                    <a href="index.html#projects" class="nav-item nav-link" data-i18n="nav.projects">Projects</a>
                                     <div class="nav-item dropdown">
-                                        <a href="#" class="nav-link" data-bs-toggle="dropdown">
-                                            <span class="dropdown-toggle">Pages</span>
-                                        </a>
-                                        <div class="dropdown-menu">
-                                            <a href="team.html" class="dropdown-item">Our team</a>
-                                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                            <a href="404.html" class="dropdown-item">404 Page</a>
-                                        </div>
-                                    </div>
-                                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+
+    <a href="javascript:void(0);"
+       class="nav-link dropdown-toggle"
+       data-bs-toggle="dropdown"
+       aria-expanded="false">
+
+        <span data-i18n="nav.pages">Pages</span>
+
+    </a>
+
+    <div class="dropdown-menu">
+
+        <a href="team.html"
+           class="dropdown-item"
+           data-i18n="nav.ourTeam">
+            Our team
+        </a>
+
+        <a href="x1.html"
+           class="dropdown-item"
+           data-i18n="nav.BhoomiShakti X1">
+            BhoomiShakti X1
+        </a>
+
+        <a href="s4.html"
+           class="dropdown-item"
+           data-i18n="nav.BhoomiShakti S4">
+            BhoomiShakti S4
+        </a>
+
+        <a href="BSJDK.html"
+           class="dropdown-item"
+           data-i18n="nav.BhoomiShakti JDKS">
+            BhoomiShakti JDKS
+        </a>
+
+        <a href="https://bhoomishakti-agri-digital-final-omega.vercel.app/"
+           class="dropdown-item"
+           data-i18n="nav.BhoomiShakti Agri Digital">
+            BhoomiShakti Agri Digital
+        </a>
+
+        <a href="bhoomishakti-app.html"
+           class="dropdown-item"
+           data-i18n="nav.BhoomiShakti AI">
+            BhoomiShakti AI
+        </a>
+
+        <a href="404.html"
+           class="dropdown-item"
+           data-i18n="nav.404">
+            404 Page
+        </a>
+
+    </div>
+
+</div>
+                                    <a href="contact.html" class="nav-item nav-link" data-i18n="nav.contact">Contact</a>
                                     <div class="nav-item theme-toggle-wrap d-flex align-items-center">
-                                        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle light and dark mode" title="Toggle light / dark mode">
+                                        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle light and dark mode" title="Toggle light / dark mode" data-i18n-title="theme.toggleTitle">
                                             <i class="fas fa-sun"></i>
                                         </button>
                                     </div>
                                     <div class="nav-btn ps-3">
-                                        <a href="https://htmlcodex.com/downloading/?item=3464" class="btn btn-primary py-2 px-4 ms-0 ms-lg-3"> Buy Pro Version</a>
+                                        <a href="#" class="btn btn-primary py-2 px-4 ms-0 ms-lg-3" data-i18n="nav.ctaFirstVersion"> First Version</a>
                                     </div>
                                 </div>
                             </div>
@@ -357,6 +288,7 @@
             </div>
         </div>
         <!-- Navbar & Hero End -->
+
 
 
         <!-- Header / Breadcrumb Start -->

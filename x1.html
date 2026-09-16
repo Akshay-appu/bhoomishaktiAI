@@ -902,8 +902,202 @@
         <script src="lib/owlcarousel/owl.carousel.min.js"></script>
         
 
-        <!-- Template Javascript -->
+       <!-- Template Javascript -->
+        <script src="js/i18n-data.js"></script>
+        <script src="js/i18n.js"></script>
         <script src="js/main.js"></script>
+
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menu = document.getElementById("navbarCollapse");
+
+    if (!menu) return;
+
+    /*
+     * Use Bootstrap's REAL collapse instance.
+     * This is important because Bootstrap itself controls
+     * the navbar's open/close state.
+     */
+    function closeNavbar() {
+
+        if (window.innerWidth >= 992) return;
+
+        if (typeof bootstrap !== "undefined") {
+
+            const collapse =
+                bootstrap.Collapse.getOrCreateInstance(menu, {
+                    toggle: false
+                });
+
+            collapse.hide();
+
+        } else {
+
+            /* fallback */
+            menu.classList.remove("show");
+
+            const toggler =
+                document.querySelector(".navbar-toggler");
+
+            if (toggler) {
+                toggler.classList.add("collapsed");
+                toggler.setAttribute("aria-expanded", "false");
+            }
+        }
+    }
+
+
+    /*
+     * CLOSE WHEN ANY NAVIGATION LINK IS CLICKED
+     *
+     * Home
+     * About
+     * Service
+     * Projects
+     * Contact
+     * First Version
+     * Innovation items
+     */
+    menu.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            /* Do not close when clicking the Innovations
+               dropdown button itself */
+            if (link.getAttribute("data-bs-toggle") === "dropdown") {
+                return;
+            }
+
+            closeNavbar();
+
+        });
+
+    });
+
+
+    /*
+     * CLOSE WHEN CLICKING OUTSIDE THE OPEN MOBILE MENU
+     */
+    document.addEventListener("click", function (event) {
+
+        if (window.innerWidth >= 992) return;
+
+        const navbar =
+            event.target.closest(".navbar");
+
+        if (!navbar) {
+            closeNavbar();
+        }
+
+    });
+
+
+    /*
+     * CLOSE AFTER CLICKING AN INNOVATION ITEM
+     */
+    menu.querySelectorAll(".dropdown-item").forEach(function (item) {
+
+        item.addEventListener("click", function () {
+            closeNavbar();
+        });
+
+    });
+
+
+    /*
+     * WHEN THE MENU FINISHES CLOSING,
+     * MAKE SURE THE TOGGLE BUTTON IS RESET.
+     */
+    menu.addEventListener("hidden.bs.collapse", function () {
+
+        const toggler =
+            document.querySelector(".navbar-toggler");
+
+        if (toggler) {
+
+            toggler.classList.add("collapsed");
+
+            toggler.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+        }
+
+    });
+
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menu = document.getElementById("navbarCollapse");
+    const toggler = document.querySelector(".navbar-toggler");
+
+    if (!menu || !toggler) return;
+
+
+    function closeMobileMenu() {
+
+        if (window.innerWidth >= 992) return;
+
+        if (menu.classList.contains("show")) {
+
+            toggler.click();
+
+        }
+
+    }
+
+
+    /* Close when clicking normal navigation links */
+    menu.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            if (
+                link.hasAttribute("data-bs-toggle") &&
+                link.getAttribute("data-bs-toggle") === "dropdown"
+            ) {
+                return;
+            }
+
+            closeMobileMenu();
+
+        });
+
+    });
+
+
+    /* Close when clicking outside navbar */
+    document.addEventListener("click", function (event) {
+
+        if (window.innerWidth >= 992) return;
+
+        if (!event.target.closest(".navbar")) {
+
+            closeMobileMenu();
+
+        }
+
+    });
+
+
+    /* Close after selecting a dropdown item */
+    menu.querySelectorAll(".dropdown-item").forEach(function (item) {
+
+        item.addEventListener("click", function () {
+
+            closeMobileMenu();
+
+        });
+
+    });
+
+});
+</script>
     </body>
+
 
 </html>
